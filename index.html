@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       CYBERSECURITY PORTFOLIO — index.html
+       Built for GitHub Pages | Phase 1
+       ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags (values injected from config.js via JS, these are fallbacks) -->
+  <title>SOMS | Cybersecurity Professional</title>
+  <meta name="description" content="Cybersecurity analyst & ethical hacker specializing in SOC operations, threat hunting, and penetration testing.">
+  <meta name="keywords" content="cybersecurity, SOC analyst, penetration testing, ethical hacker, threat intelligence">
+  <meta name="author" content="SOMS">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SOMS | Cybersecurity Professional">
+  <meta property="og:description" content="Cybersecurity analyst & ethical hacker specializing in SOC operations, threat hunting, and penetration testing.">
+  <meta property="og:image" content="images/og-preview.png">
+  <meta property="og:url" content="">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SOMS | Cybersecurity Professional">
+  <meta name="twitter:description" content="Cybersecurity analyst & ethical hacker specializing in SOC operations, threat hunting, and penetration testing.">
+  <meta name="twitter:image" content="images/og-preview.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+  <!-- Google Fonts: Inter (body) + JetBrains Mono (code/headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ====== PRELOADER ====== -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader__content">
+      <div class="preloader__terminal">
+        <span class="preloader__text">[<span class="accent">*</span>] Initializing secure connection...</span>
+        <span class="preloader__cursor">▊</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ====== NAVIGATION ====== -->
+  <header id="navbar" class="navbar" role="banner">
+    <nav class="navbar__inner container" aria-label="Main navigation">
+      <!-- Logo -->
+      <a href="#" class="navbar__logo" id="nav-logo" aria-label="Home">
+        <!-- Dynamically populated from CONFIG.nav.logo -->
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="navbar__links" id="nav-links" role="menubar">
+        <!-- Dynamically populated from CONFIG.nav.links -->
+      </ul>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="navbar__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- ====== HERO SECTION ====== -->
+  <section id="hero" class="hero" aria-labelledby="hero-heading">
+    <!-- Hero background elements removed for pure minimalist design -->
+
+    <div class="hero__content container">
+      <div class="hero__text">
+        <p class="hero__greeting" id="hero-greeting">
+          <!-- Populated from CONFIG.hero.greeting -->
+        </p>
+        <h1 class="hero__name glitch" id="hero-heading" data-text="">
+          <!-- Populated from CONFIG.hero.name -->
+        </h1>
+        <div class="hero__tagline-wrapper">
+          <span class="hero__tagline" id="hero-tagline"></span>
+          <span class="hero__cursor" aria-hidden="true">▊</span>
+        </div>
+        <p class="hero__description" id="hero-description">
+          <!-- Populated from CONFIG.hero.description -->
+        </p>
+        <div class="hero__ctas">
+          <a href="#contact" class="btn btn--primary" id="hero-cta-primary">
+            <i class="fas fa-paper-plane"></i>
+            <!-- Populated from CONFIG.hero.ctaPrimary.label -->
+          </a>
+          <a href="#projects" class="btn btn--secondary" id="hero-cta-secondary">
+            <i class="fas fa-briefcase"></i>
+            <!-- Populated from CONFIG.hero.ctaSecondary.label -->
+          </a>
+        </div>
+      </div>
+      <div class="hero__image-wrapper">
+        <!-- REPLACE: Add your professional headshot here (500x500px recommended) -->
+        <div class="hero__image-frame">
+          <img id="hero-image" class="hero__image" src="images/hero-photo.png" alt="Professional headshot" loading="eager">
+          <div class="hero__image-border" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ====== ABOUT SECTION ====== -->
+  <section id="about" class="section about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" id="about-heading">
+          <span class="section__title-accent">//</span> About Me
+        </h2>
+        <p class="section__subtitle" id="about-subtitle"></p>
+      </div>
+
+      <div id="about-code-editor" class="reveal">
+        <!-- The code editor UI will be injected here by main.js -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== SERVICES SECTION ====== -->
+  <section id="services" class="section services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" id="services-heading">
+          <span class="section__title-accent">//</span> Services
+        </h2>
+        <p class="section__subtitle" id="services-subtitle"></p>
+      </div>
+
+      <div class="services__grid" id="services-grid">
+        <!-- Populated from CONFIG.services.items -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== PROJECTS SECTION ====== -->
+  <section id="projects" class="section projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" id="projects-heading">
+          <span class="section__title-accent">//</span> Projects
+        </h2>
+        <p class="section__subtitle" id="projects-subtitle"></p>
+      </div>
+
+      <!-- Category Filter Buttons -->
+      <div class="projects__filters reveal" id="projects-filters" role="tablist" aria-label="Filter projects by category">
+        <!-- Populated from CONFIG.projects.categories -->
+      </div>
+
+      <div class="projects__grid" id="projects-grid">
+        <!-- Populated from CONFIG.projects.items -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== CERTIFICATIONS SECTION ====== -->
+  <section id="certifications" class="section certifications" aria-labelledby="certs-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" id="certs-heading">
+          <span class="section__title-accent">//</span> Certifications
+        </h2>
+        <p class="section__subtitle" id="certs-subtitle"></p>
+      </div>
+
+      <div class="certs__grid" id="certs-grid">
+        <!-- Populated from CONFIG.certifications.items -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== TESTIMONIALS SECTION ====== -->
+  <section id="testimonials" class="section testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" id="testimonials-heading">
+          <span class="section__title-accent">//</span> Testimonials
+        </h2>
+        <p class="section__subtitle" id="testimonials-subtitle"></p>
+      </div>
+
+      <div class="testimonials__grid" id="testimonials-grid">
+        <!-- Populated from CONFIG.testimonials.items -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== BLOG SECTION (OPTIONAL — toggle via CONFIG.sections.showBlog) ====== -->
+  <section id="blog" class="section blog" aria-labelledby="blog-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" id="blog-heading">
+          <span class="section__title-accent">//</span> Latest Writes
+        </h2>
+        <p class="section__subtitle" id="blog-subtitle"></p>
+      </div>
+
+      <div class="blog__grid" id="blog-grid">
+        <!-- Populated from CONFIG.blog.posts -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== CONTACT SECTION ====== -->
+  <section id="contact" class="section contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title" id="contact-heading">
+          <span class="section__title-accent">//</span> Get In Touch
+        </h2>
+        <p class="section__subtitle" id="contact-subtitle"></p>
+      </div>
+
+      <div class="contact__grid">
+        <!-- Contact Info -->
+        <div class="contact__info reveal">
+          <div class="contact__info-card">
+            <div class="contact__info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <a href="" id="contact-email-link"></a>
+              </div>
+            </div>
+            <div class="contact__info-item">
+              <i class="fas fa-shield-halved"></i>
+              <div>
+                <h4>Status</h4>
+                <p class="contact__status"><span class="contact__status-dot"></span> Available for hire</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="contact__socials" id="contact-socials">
+            <!-- Populated from CONFIG.contact.socialLinks -->
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact__form-wrapper reveal">
+          <form id="contact-form" class="contact__form" action="" method="POST" novalidate>
+            <div class="form__group">
+              <label for="form-name" class="form__label">Name</label>
+              <input type="text" id="form-name" name="name" class="form__input" placeholder="John Doe" required autocomplete="name">
+              <span class="form__error" id="error-name"></span>
+            </div>
+            <div class="form__group">
+              <label for="form-email" class="form__label">Email</label>
+              <input type="email" id="form-email" name="email" class="form__input" placeholder="john@example.com" required autocomplete="email">
+              <span class="form__error" id="error-email"></span>
+            </div>
+            <div class="form__group">
+              <label for="form-message" class="form__label">Message</label>
+              <textarea id="form-message" name="message" class="form__input form__textarea" placeholder="Tell me about your security needs..." rows="5" required></textarea>
+              <span class="form__error" id="error-message"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="form-submit">
+              <span class="btn__text"><i class="fas fa-paper-plane"></i> Send Message</span>
+              <span class="btn__loading" aria-hidden="true"><i class="fas fa-circle-notch fa-spin"></i> Sending...</span>
+            </button>
+            <div id="form-status" class="form__status" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== FOOTER ====== -->
+  <footer id="footer" class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo" id="footer-logo"></a>
+          <p class="footer__tagline" id="footer-tagline"></p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <h4 class="footer__nav-title">Quick Links</h4>
+          <ul class="footer__nav-links" id="footer-nav-links">
+            <!-- Populated from CONFIG.nav.links -->
+          </ul>
+        </nav>
+
+        <div class="footer__social">
+          <h4 class="footer__nav-title">Connect</h4>
+          <div class="footer__social-links" id="footer-social-links">
+            <!-- Populated from CONFIG.contact.socialLinks -->
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">
+          <!-- Populated dynamically: © 2026 SOMS. All rights reserved. -->
+        </p>
+        <p class="footer__credit">
+          Designed & Built with <span class="accent">♥</span> and <code>sudo</code>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ====== BACK TO TOP BUTTON ====== -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll to top" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <!-- ====== SCRIPTS ====== -->
+  <!-- Configuration (load first — provides the CONFIG object) -->
+  <script src="js/config.js"></script>
+  <!-- Main Application Logic -->
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
