@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://soms36-DefSec.github.io/portfolio/sitemap.xml
+Sitemap: https://soms36-DefSec.github.io/My_Profile/sitemap.xml

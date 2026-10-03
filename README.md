@@ -8,7 +8,8 @@
 ## 🚀 Live Demo & Repository
 - **GitHub Profile**: [https://github.com/soms36-DefSec](https://github.com/soms36-DefSec)
 - **LinkedIn**: [https://www.linkedin.com/in/soms36/](https://www.linkedin.com/in/soms36/)
-- **Repository**: [https://github.com/soms36-DefSec/portfolio](https://github.com/soms36-DefSec/portfolio)
+- **Repository**: [https://github.com/soms36-DefSec/My_Profile](https://github.com/soms36-DefSec/My_Profile)
+- **Live Website**: [https://soms36-DefSec.github.io/My_Profile/](https://soms36-DefSec.github.io/My_Profile/)
 
 ---
 
@@ -214,7 +215,7 @@ The repository includes a GitHub Actions workflow in `.github/workflows/deploy.y
    - Under **Build and deployment** > **Source**, select **GitHub Actions**.
 3. Every push to `main` (or `master`) automatically runs:
    `npm ci` ➔ `npm run typecheck` ➔ `npm run build` ➔ `deploy to GitHub Pages`.
-4. Your website will be live at `https://soms36-DefSec.github.io/portfolio/` (or `https://soms36-DefSec.github.io/`).
+4. Your website will be live at `https://soms36-DefSec.github.io/My_Profile/` (or your custom domain).
 
 ---
 
