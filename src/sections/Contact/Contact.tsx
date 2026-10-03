@@ -2,8 +2,9 @@ import React from 'react';
 import { profile } from '../../data/profile';
 import { socialLinks } from '../../data/social';
 import { SectionHeader } from '../../components/ui/SectionHeader';
+import { ContactForm } from '../../components/ui/ContactForm';
 import { useClipboard } from '../../hooks/useClipboard';
-import { Mail, Copy, Check, ArrowRight, ExternalLink } from 'lucide-react';
+import { Mail, Copy, Check, ExternalLink, Clock } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../../components/ui/Icons';
 
 export const Contact: React.FC = () => {
@@ -26,95 +27,69 @@ export const Contact: React.FC = () => {
         <SectionHeader
           number="12 / CONTACT"
           title="Get in touch"
-          subtitle="Open for conversations around defensive security, systems engineering, research collaborations, and internships."
+          subtitle="Send a direct message or connect regarding defensive security, systems engineering, freelance contracts, or research."
         />
 
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'minmax(320px, 1.3fr) minmax(300px, 1fr)',
             gap: '3rem',
             alignItems: 'start',
           }}
+          className="contact-grid"
         >
-          {/* Direct Email Column */}
-          <div
-            style={{
-              border: '1px solid var(--border-default)',
-              backgroundColor: 'var(--bg-surface)',
-              borderRadius: 'var(--radius-xs)',
-              padding: '2rem',
-            }}
-          >
+          {/* Direct Interactive Message Box (Column 1) */}
+          <div>
+            <ContactForm />
+          </div>
+
+          {/* Direct Channels & Details (Column 2) */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            {/* Direct Email Card with One-Click Copy */}
             <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                marginBottom: '1rem',
+                border: '1px solid var(--border-default)',
+                backgroundColor: 'var(--bg-surface)',
+                borderRadius: 'var(--radius-xs)',
+                padding: '1.5rem',
               }}
             >
-              <Mail size={18} color="var(--accent)" />
-              <span
-                className="font-mono"
+              <div
                 style={{
-                  fontSize: '0.75rem',
-                  color: 'var(--accent)',
-                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  marginBottom: '0.75rem',
                 }}
               >
-                Direct Contact
-              </span>
-            </div>
-
-            <h3
-              style={{
-                fontSize: '1.25rem',
-                fontWeight: 700,
-                color: 'var(--text-primary)',
-                marginBottom: '0.5rem',
-                lineHeight: 1.3,
-              }}
-            >
-              Have a project or research proposal?
-            </h3>
-
-            <p
-              style={{
-                fontSize: '0.9375rem',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.6,
-                marginBottom: '1.5rem',
-              }}
-            >
-              Feel free to reach out directly via email for security engineering internships, systems architecture collaborations, or research discussions.
-            </p>
-
-            {/* Email Copier Box */}
-            <div
-              style={{
-                backgroundColor: 'var(--bg-primary)',
-                border: '1px solid var(--border-subtle)',
-                borderRadius: 'var(--radius-xs)',
-                padding: '0.75rem 1rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '1rem',
-                marginBottom: '1.5rem',
-              }}
-            >
-              <div style={{ overflow: 'hidden' }}>
-                <div
+                <Mail size={16} color="var(--accent)" />
+                <span
                   className="font-mono"
                   style={{
-                    fontSize: '0.6875rem',
-                    color: 'var(--text-muted)',
-                    marginBottom: '0.15rem',
+                    fontSize: '0.75rem',
+                    color: 'var(--accent)',
+                    fontWeight: 600,
+                    textTransform: 'uppercase',
                   }}
                 >
-                  Email Address
-                </div>
+                  Direct Email Inbox
+                </span>
+              </div>
+
+              <div
+                style={{
+                  backgroundColor: 'var(--bg-primary)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: 'var(--radius-xs)',
+                  padding: '0.75rem 0.85rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '0.75rem',
+                  marginBottom: '1rem',
+                }}
+              >
                 <div
                   className="font-mono"
                   style={{
@@ -126,104 +101,102 @@ export const Contact: React.FC = () => {
                 >
                   {profile.email}
                 </div>
+
+                <button
+                  onClick={() => copy(profile.email)}
+                  aria-label="Copy email address"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                    padding: '0.35rem 0.65rem',
+                    fontSize: '0.75rem',
+                    fontFamily: 'var(--font-mono)',
+                    border: '1px solid var(--border-default)',
+                    backgroundColor: 'transparent',
+                    color: copied ? 'var(--accent)' : 'var(--text-secondary)',
+                    borderRadius: 'var(--radius-xs)',
+                    cursor: 'pointer',
+                    flexShrink: 0,
+                    transition: 'all var(--transition-fast)',
+                  }}
+                >
+                  {copied ? (
+                    <>
+                      <Check size={12} color="var(--accent)" />
+                      <span>Copied</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy size={12} />
+                      <span>Copy</span>
+                    </>
+                  )}
+                </button>
               </div>
 
-              <button
-                onClick={() => copy(profile.email)}
-                aria-label="Copy email address"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.35rem',
-                  padding: '0.35rem 0.65rem',
-                  fontSize: '0.75rem',
-                  fontFamily: 'var(--font-mono)',
-                  border: '1px solid var(--border-default)',
-                  backgroundColor: 'transparent',
-                  color: copied ? 'var(--accent)' : 'var(--text-secondary)',
-                  borderRadius: 'var(--radius-xs)',
-                  cursor: 'pointer',
-                  flexShrink: 0,
-                  transition: 'all var(--transition-fast)',
-                }}
-              >
-                {copied ? (
-                  <>
-                    <Check size={12} color="var(--accent)" />
-                    <span>Copied</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy size={12} />
-                    <span>Copy</span>
-                  </>
-                )}
-              </button>
-            </div>
-
-            <a
-              href={`mailto:${profile.email}`}
-              className="text-link--accent"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                fontSize: '0.875rem',
-                fontWeight: 600,
-              }}
-            >
-              <span>Compose email</span>
-              <ArrowRight size={14} />
-            </a>
-          </div>
-
-          {/* Social Channels & Location Details */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '1rem',
-                  padding: '1.25rem',
-                  border: '1px solid var(--border-default)',
-                  backgroundColor: 'var(--bg-surface)',
-                  borderRadius: 'var(--radius-xs)',
-                  textDecoration: 'none',
-                  transition: 'border-color var(--transition-fast)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--border-strong)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--border-default)';
+                  gap: '0.45rem',
+                  fontSize: '0.8125rem',
+                  color: 'var(--text-muted)',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                  {getSocialIcon(link.icon)}
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <span style={{ fontSize: '0.9375rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                        {link.name}
-                      </span>
-                      <span className="font-mono" style={{ fontSize: '0.75rem', color: 'var(--accent)' }}>
-                        {link.handle}
-                      </span>
-                    </div>
-                    <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
-                      {link.description}
+                <Clock size={13} color="var(--accent)" />
+                <span>Typical response time: within 24 hours</span>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '1rem',
+                    padding: '1.15rem 1.25rem',
+                    border: '1px solid var(--border-default)',
+                    backgroundColor: 'var(--bg-surface)',
+                    borderRadius: 'var(--radius-xs)',
+                    textDecoration: 'none',
+                    transition: 'border-color var(--transition-fast)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'var(--border-strong)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'var(--border-default)';
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    {getSocialIcon(link.icon)}
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span style={{ fontSize: '0.9375rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                          {link.name}
+                        </span>
+                        <span className="font-mono" style={{ fontSize: '0.75rem', color: 'var(--accent)' }}>
+                          {link.handle}
+                        </span>
+                      </div>
+                      <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.1rem' }}>
+                        {link.description}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <ExternalLink size={14} color="var(--text-muted)" />
-              </a>
-            ))}
+                  <ExternalLink size={14} color="var(--text-muted)" />
+                </a>
+              ))}
+            </div>
 
             {/* Base Location Note */}
             <div
@@ -250,6 +223,15 @@ export const Contact: React.FC = () => {
             </div>
           </div>
         </div>
+
+        <style>{`
+          @media (max-width: 860px) {
+            .contact-grid {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
