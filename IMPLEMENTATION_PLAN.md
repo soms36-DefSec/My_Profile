@@ -1,178 +1,67 @@
-# 🛡️ Cybersecurity Portfolio — Implementation Plan (Phase 1)
+# SOMS — Personal Portfolio Implementation Plan
 
-> **Project:** Personal Cybersecurity Portfolio Website  
-> **Stack:** HTML5 + Vanilla CSS3 + Vanilla JavaScript (ES6+)  
-> **Deployment:** GitHub Pages (static files only)  
-> **Phase:** 1 — MVP Launch  
+## Overview
+A production-grade, modular, and data-driven portfolio website for **Someshwar S** (`SOMS` / `soms36-DefSec`). The site is built with **React**, **TypeScript**, and **Vite**, featuring a premium dark engineering aesthetic tailored to a cybersecurity builder, cloud defense engineer, and AI security researcher.
 
 ---
 
-## 1. Objectives
-
-| # | Objective | Success Criteria |
-|---|-----------|-----------------|
-| 1 | Deliver a visually stunning, dark hacker-themed portfolio | First impression "wow factor" — neon green, matrix effects, glassmorphism |
-| 2 | All content editable via a single config file | Non-developers can update name, bio, projects, images by editing `js/config.js` |
-| 3 | Fully responsive (mobile-first) | Pixel-perfect on 320px–2560px screens |
-| 4 | GitHub Pages deployable | No build step, no npm, no frameworks — just push and go |
-| 5 | SEO & accessibility ready | Semantic HTML5, meta tags, Open Graph, ARIA labels |
-| 6 | Fast performance | < 2s first contentful paint, < 100 KB CSS+JS total |
+## Architecture & Technology Stack
+- **Framework**: React 19 + TypeScript
+- **Bundler & Tooling**: Vite
+- **Icons**: Lucide React (`lucide-react`)
+- **Styling Architecture**: Modern CSS Design Token System with CSS Modules / Scoped CSS (clean typography, subtle gridlines, coordinate tags, high contrast, dark graphite theme with precision crimson/amber accent, zero neon overload, responsive down to 360px)
+- **Deployment**: GitHub Pages via `.github/workflows/deploy.yml` with automated build & artifact publishing
+- **Data Architecture**: 100% decoupled content stored in `src/data/*.ts` and strictly typed in `src/types/*.ts`
 
 ---
 
-## 2. Design System
+## Phase Breakdown
 
-### Color Palette
-| Token | Hex | Usage |
-|-------|-----|-------|
-| `--bg-primary` | `#0a0a0a` | Page background |
-| `--bg-card` | `#111111` | Card backgrounds |
-| `--bg-elevated` | `#1a1a1a` | Elevated surfaces |
-| `--color-primary` | `#00ff41` | Neon green — CTAs, highlights, accents |
-| `--color-secondary` | `#00f0ff` | Electric cyan — links, secondary accents |
-| `--color-danger` | `#ff0055` | Red — alerts, hover states |
-| `--text-primary` | `#ffffff` | Headings |
-| `--text-body` | `#e0e0e0` | Body text |
-| `--text-muted` | `#888888` | Captions, placeholders |
+### Phase 1: Environment & Project Foundation
+- Initialize React + TypeScript + Vite architecture (`package.json`, `tsconfig.json`, `vite.config.ts`, `index.html`)
+- Install core dependencies (`react`, `react-dom`, `lucide-react`, dev tooling)
+- Set up CSS tokens: colors, spacing, typography (sans + mono), elevation, technical grid patterns, and reduced-motion media queries
+- Define complete TypeScript types (`Project`, `Skill`, `JourneyItem`, `Club`, `Activity`, `Achievement`, `Certification`, `CurrentFocus`, `Profile`)
+- Verify initial build and dev server
 
-### Typography
-| Element | Font | Weight |
-|---------|------|--------|
-| Headings / Code | JetBrains Mono | 700 |
-| Body | Inter | 400 / 500 |
+### Phase 2: Authentic Content Layer (`src/data/`)
+- Populate central profile configuration from verified sources (B.Tech CSE @ SASTRA University, MeitY InsiEDR project, LLM-IaC-Security, ACE Project Lead, Tiruchirappalli)
+- Configure projects with rich architecture details and verification links:
+  - **InsiEDR**: Behavioral Zero-Trust EDR Platform (MeitY Funded)
+  - **LLM-IaC-Security**: Multi-Agent CloudFormation Scanner & Auto-Remediation
+  - **TrackMe**: Location & Telemetry Tracking System
+  - **My_Scriptings**: Security Automation & Automation Toolkit
+- Configure Journey timeline (2023 - 2026+)
+- Configure Skills grouped by domain (Zero arbitrary percentage bars)
+- Configure Clubs & Communities (Association of Computing Engineers - ACE)
+- Configure `/now` section (`current.ts` with building, learning, exploring, researching)
+- Configure social links and contact configuration
 
-### Effects
-- **Glassmorphism**: `rgba(17,17,17,0.7)` + `backdrop-filter: blur(12px)`
-- **Neon Glow**: `box-shadow: 0 0 20px rgba(0,255,65,0.3)`
-- **Matrix Rain**: Canvas-based character rain behind hero section
-- **Typing Effect**: Rotating taglines with blinking cursor
-- **Scroll Reveal**: Fade-in-up on viewport entry
-- **Glitch Text**: CSS keyframe glitch on hover
+### Phase 3: Core UI Components & Sections
+- **Navigation**: Sticky technical navbar, active section spy via IntersectionObserver, mobile drawer, keyboard accessibility
+- **Hero**: Confident engineering typography (`SOMS.`, `SECURITY.`, `SYSTEMS.`, `AI.`, `BUILDER.`), real-time status pill, primary CTAs
+- **About**: Clean technical overview, verified quick facts (Location, Education, Current Focus), status badge
+- **Focus Areas**: Deep architectural focus cards (Defensive Security, Cloud Defense & DevSecOps, AI/LLM Security, Systems & Telemetry)
+- **Projects**: Featured project showcases with architecture schematics, tag pills, GitHub repository links, and extensible modal/preview support
+- **Journey**: Vertical engineering timeline with milestones, category badges, and mobile stacking
+- **Skills**: Domain-grouped pill matrices with technical indicators
+- **Clubs & Communities**: Rich organization cards for ACE and technical leadership
+- **Activities & Events**: Interactive activity feed (CTFs, workshops, open-source)
+- **Achievements & Certifications**: Compact milestone showcase (MeitY funding, academic honors)
+- **Now**: Minimalist `/ NOW` terminal-styled dashboard showing active pursuits
+- **GitHub**: Progressive enhancement showcase for `soms36-DefSec` with fallback cache
+- **Contact & Footer**: Direct communication terminal, clipboard copy for email, social channels, and copyright
 
----
+### Phase 4: Polish, Micro-Interactions & Accessibility
+- CSS animations with `prefers-reduced-motion` compliance
+- Interactive project details drawer/modal for deep-dive exploration
+- Micro-interactions: subtle coordinate labels, active section indicators, hover line shifts
+- Keyboard accessibility, semantic HTML elements, ARIA attributes
+- Performance optimization (zero huge images, pure SVG icons, minimal bundle footprint)
+- SEO meta tags, Open Graph, Twitter cards, custom favicon, robots.txt, sitemap.xml
 
-## 3. Architecture
-
-```
-portfolio/
-├── index.html                  # Main HTML (semantic, section-commented)
-├── css/
-│   └── style.css               # Complete stylesheet (mobile-first)
-├── js/
-│   ├── config.js               # ⭐ ALL personal content lives here
-│   └── main.js                 # Dynamic rendering & interactions
-├── images/                     # All image assets
-│   ├── hero-photo.png
-│   ├── about-photo.png
-│   ├── og-preview.png
-│   ├── projects/               # Project screenshots
-│   ├── certs/                  # Certification badges
-│   ├── testimonials/           # Author photos
-│   └── blog/                   # Blog thumbnails
-├── IMPLEMENTATION_PLAN.md      # This file
-├── FILE_STRUCTURE.md           # Directory tree reference
-└── README.md                   # GitHub repository README
-```
-
----
-
-## 4. Build Steps
-
-### Step 1 — Configuration Layer (`js/config.js`)
-- [x] Define complete CONFIG object with all sections
-- [x] Include section visibility toggles (`showBlog: false`, etc.)
-- [x] Document every field with inline comments
-- [x] Add placeholder content that reads naturally
-
-### Step 2 — Stylesheet (`css/style.css`)
-- [x] CSS custom properties for the design system
-- [x] Mobile-first responsive breakpoints (480px → 768px → 1024px → 1200px)
-- [x] All component styles (nav, hero, cards, badges, form, footer)
-- [x] Animations: fade-in, typing cursor, glitch, hover glow
-- [x] Utility classes: `.container`, `.section-title`, `.btn-primary`, etc.
-- [x] Accessibility: `prefers-reduced-motion`, focus states, contrast
-- [x] Custom scrollbar styling
-
-### Step 3 — Core JavaScript (`js/main.js`)
-- [x] Read CONFIG and render all sections dynamically
-- [x] Matrix rain canvas animation (performant, pauses when offscreen)
-- [x] Typing effect for hero taglines
-- [x] Project filtering by category
-- [x] Smooth scrolling & active nav highlighting
-- [x] Mobile hamburger menu
-- [x] Scroll reveal animations (Intersection Observer)
-- [x] Contact form validation & Formspree submission
-- [x] Back-to-top button
-- [x] Section visibility toggle
-
-### Step 4 — HTML Structure (`index.html`)
-- [x] Semantic HTML5 with ARIA landmarks
-- [x] SEO meta tags & Open Graph
-- [x] CDN dependencies: Google Fonts + Font Awesome
-- [x] Clear section comments (`<!-- ====== HERO SECTION ====== -->`)
-- [x] Image placeholders with `<!-- REPLACE: ... -->` comments
-- [x] Script loading order: config.js → main.js (deferred)
-
-### Step 5 — Documentation
-- [x] IMPLEMENTATION_PLAN.md
-- [x] FILE_STRUCTURE.md
-- [ ] README.md (Phase 2)
-
----
-
-## 5. Agility Features (Self-Editing)
-
-| Feature | How It Works |
-|---------|-------------|
-| **Update your name/bio** | Edit `CONFIG.hero.name` and `CONFIG.about.bio` in `js/config.js` |
-| **Add/remove a project** | Add/remove an object in `CONFIG.projects.items` array |
-| **Change a skill badge** | Edit the `CONFIG.about.skills` array |
-| **Hide the blog section** | Set `CONFIG.sections.showBlog = false` |
-| **Update social links** | Edit URLs in `CONFIG.contact.socialLinks` |
-| **Replace any image** | Drop new image in `/images/` and update the path in config |
-
----
-
-## 6. External Dependencies (CDN)
-
-| Library | Version | Purpose |
-|---------|---------|---------|
-| Google Fonts | — | Inter + JetBrains Mono typography |
-| Font Awesome | 6.5 | Icon library for services, social links |
-
-**Zero** npm packages. **Zero** build tools. **Zero** backend.
-
----
-
-## 7. Deployment (GitHub Pages)
-
-```bash
-# 1. Initialize repo
-git init
-git add .
-git commit -m "🚀 Phase 1: Cybersecurity portfolio launch"
-
-# 2. Push to GitHub
-git remote add origin https://github.com/yourusername/portfolio.git
-git push -u origin main
-
-# 3. Enable GitHub Pages
-# Settings → Pages → Source: Deploy from branch → main → / (root)
-```
-
----
-
-## 8. Phase 2 Roadmap (Future)
-
-- [ ] Dark/light theme toggle
-- [ ] Blog section with markdown rendering
-- [ ] Project detail modal/page
-- [ ] Animated skill progress bars
-- [ ] Visitor analytics (privacy-respecting)
-- [ ] PWA support (service worker, manifest)
-- [ ] i18n (multi-language support)
-- [ ] CI/CD: GitHub Actions for HTML/CSS linting
-
----
-
-*Built with 🖤 and `sudo` privileges.*
+### Phase 5: Verification & CI/CD
+- Complete TypeScript compilation check (`npm run typecheck`)
+- Production bundle verification (`npm run build`)
+- GitHub Actions deployment workflow setup (`.github/workflows/deploy.yml`)
+- Detailed `README.md` documentation covering content updating, local development, and deployment

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soms36-DefSec.github.io/portfolio/sitemap.xml
