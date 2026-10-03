@@ -7,8 +7,8 @@ import { CurrentPursuits } from '../types';
 export const current: CurrentPursuits = {
   building: [
     {
-      title: 'InsiEDR Telemetry Sensor & Backend',
-      desc: 'Developing Windows telemetry collection and high-speed ClickHouse ingestion for the MeitY-funded insider-threat platform.',
+      title: 'InsiEDR — Insider Threat Detection & Response',
+      desc: 'Developing Windows telemetry sensor and high-speed ClickHouse ingestion for the MeitY-funded InsiEDR Insider Threat Detection and Response System.',
       tag: 'MeitY Funded',
       link: 'https://github.com/soms36-DefSec/InsiEDR_Server',
     },

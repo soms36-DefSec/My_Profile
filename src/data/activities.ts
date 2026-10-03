@@ -19,8 +19,8 @@ export const activities: Activity[] = [
     date: '2024',
     type: 'Technical Demonstration',
     description:
-      'Presented the working architecture of the InsiEDR system, demonstrating Windows agent event collection, AES-256-GCM encryption, and baseline anomaly detection on the server.',
-    tags: ['InsiEDR', 'Architecture Demo', 'Telemetry', 'MeitY'],
+      'Presented the working architecture of InsiEDR (Insider Threat Detection and Response System), demonstrating Windows agent event collection, AES-256-GCM encryption, and baseline anomaly detection on the server.',
+    tags: ['InsiEDR', 'Insider Threat EDR', 'Telemetry', 'MeitY'],
     featured: true,
   },
   {

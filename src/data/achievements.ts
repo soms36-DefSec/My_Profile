@@ -7,7 +7,7 @@ export const achievements: Achievement[] = [
     organization: 'Ministry of Electronics and Information Technology (MeitY)',
     year: '2024',
     description:
-      'Secured competitive government project funding for the research, design, and implementation of InsiEDR—a behavior-based Zero-Trust Endpoint Detection & Response system.',
+      'Secured competitive government project funding for the research, design, and implementation of InsiEDR—an Insider Threat Detection and Response System.',
     type: 'Grant',
     badge: 'National Funding',
     link: 'https://github.com/soms36-DefSec/InsiEDR_Server',

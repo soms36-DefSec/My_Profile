@@ -5,11 +5,11 @@ export const journey: JourneyItem[] = [
     id: 'now-active',
     year: '2026',
     period: 'PRESENT',
-    title: 'InsiEDR Telemetry & Systems Work',
+    title: 'InsiEDR — Insider Threat Detection & Response Work',
     organization: 'Independent Project / MeitY Funded',
     category: 'Project',
     description:
-      'Refining endpoint telemetry collection, writing low-level sensor components, and testing ClickHouse ingestion under heavy synthetic event loads.',
+      'Refining endpoint telemetry collection, writing low-level sensor components, and testing ClickHouse ingestion under heavy synthetic event loads for the InsiEDR Insider Threat Detection and Response System.',
     highlights: [
       'Testing CERT heuristic rules alongside Isolation Forest anomaly models',
       'Experimenting with Rust for memory-safe sensor components',
@@ -25,7 +25,7 @@ export const journey: JourneyItem[] = [
     organization: 'Ministry of Electronics and Information Technology (MeitY)',
     category: 'Milestone',
     description:
-      'Submitted architecture proposal for InsiEDR to address insider threats and lateral movement. Awarded government project funding to build the prototype sensor and analytics server.',
+      'Submitted architecture proposal for InsiEDR, an Insider Threat Detection and Response System to address insider risks, compromised identities, and lateral movement. Awarded government project funding to build the prototype sensor and analytics server.',
     highlights: [
       'Wrote initial threat model and architecture specifications',
       'Implemented AES-256-GCM encrypted telemetry transport',

@@ -3,16 +3,16 @@ import { Project } from '../types';
 export const projects: Project[] = [
   {
     id: 'insiedr-platform',
-    title: 'InsiEDR — Zero-Trust Endpoint Detection Platform',
+    title: 'InsiEDR — Insider Threat Detection and Response System',
     shortTitle: 'InsiEDR',
-    subtitle: 'Endpoint Telemetry Agent + Hybrid ML Detection Server',
+    subtitle: 'Endpoint Telemetry Agent + Hybrid ML Insider Threat Response Server',
     category: 'EDR & Systems',
     year: '2024 – Present',
     status: 'Active Development',
     description:
-      'A behavior-based endpoint telemetry and threat detection platform built to detect insider threats, lateral movement, and data exfiltration. Funded by MeitY (Ministry of Electronics and Information Technology).',
+      'A specialized Insider Threat Detection and Response (EDR) system built to detect malicious insider activity, unauthorized data exfiltration, compromised credentials, and lateral movement in real time. Funded by MeitY (Ministry of Electronics and Information Technology).',
     longDescription:
-      'InsiEDR combines an endpoint sensor with a high-throughput central server. The Windows agent collects 30+ telemetry metrics, encrypts them client-side with AES-256-GCM, and streams them to a FastAPI ingestion pipeline. Telemetry is evaluated across a 4-tier pipeline: deterministic CERT insider threat rules, Isolation Forest for unsupervised outlier scoring, XGBoost for scenario attribution, and temporal sequence modeling. Relational state is stored in PostgreSQL while ClickHouse handles high-FPS analytical queries, pushing live alerts to a React 19 dashboard via Server-Sent Events.',
+      'InsiEDR (Insider Threat Detection and Response System) combines a lightweight Windows endpoint sensor with a high-throughput central server. The agent collects 30+ telemetry metrics, encrypts them client-side with AES-256-GCM, and streams them to a FastAPI ingestion pipeline. Telemetry is evaluated across a 4-tier pipeline: deterministic CERT insider threat heuristics, Isolation Forest for unsupervised outlier scoring, XGBoost for threat classification, and temporal sequence modeling. Relational state is stored in PostgreSQL while ClickHouse handles high-FPS analytical queries, pushing live alerts and automated response actions to a React 19 SOC dashboard via Server-Sent Events.',
     technologies: [
       'Python',
       'FastAPI',

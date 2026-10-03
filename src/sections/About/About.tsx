@@ -136,7 +136,7 @@ export const About: React.FC = () => {
                 Project Lead & Principal Developer, InsiEDR
               </div>
               <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
-                MeitY funded endpoint detection & zero-trust system
+                MeitY funded Insider Threat Detection & Response System
               </div>
 
               <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '0.75rem' }}>

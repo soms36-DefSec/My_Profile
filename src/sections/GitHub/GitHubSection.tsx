@@ -16,14 +16,14 @@ export const GitHubSection: React.FC = () => {
   const fallbackRepos: RepoSummary[] = [
     {
       name: 'InsiEDR_Server',
-      description: 'Central backend, ML anomaly detection pipeline, and React 19 SOC console for the InsiEDR Zero-Trust platform.',
+      description: 'Central backend, ML anomaly detection pipeline, and React 19 SOC console for the InsiEDR Insider Threat Detection and Response System.',
       language: 'Python',
       url: 'https://github.com/soms36-DefSec/InsiEDR_Server',
       isPinned: true,
     },
     {
       name: 'InsiEDR_agent',
-      description: 'Windows endpoint telemetry agent collecting 30+ event channels with AES-256-GCM client encryption.',
+      description: 'Windows endpoint telemetry agent collecting 30+ event channels with AES-256-GCM client encryption for InsiEDR.',
       language: 'Python / Rust',
       url: 'https://github.com/soms36-DefSec/InsiEDR_agent',
       isPinned: true,
