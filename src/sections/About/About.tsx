@@ -140,10 +140,10 @@ export const About: React.FC = () => {
               </div>
 
               <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '0.75rem' }}>
-                Project Lead & Core Member, ACE
+                Lead of Technical & Non-Technical Operations, ACE
               </div>
               <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
-                Association of Computing Engineers, SASTRA University
+                Managing ~350 active members across Cybersecurity, Networks, IoT, App & Web Dev
               </div>
             </div>
 

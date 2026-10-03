@@ -52,14 +52,15 @@ export const journey: JourneyItem[] = [
     id: 'ace-leadership',
     year: '2024',
     period: '2024 – PRESENT',
-    title: 'Project Lead & Core Member',
+    title: 'Lead of Technical & Non-Technical Operations',
     organization: 'Association of Computing Engineers (ACE), SASTRA University',
     category: 'Leadership',
     description:
-      'Selected to lead technical projects and peer learning at ACE. Organizing hands-on workshops on Linux, network traffic analysis, and CTF challenges.',
+      'Appointed to lead cross-functional operations across 350+ active student members. Driving technical project architectures alongside non-technical creative design, event planning, and symposium organizing.',
     highlights: [
-      'Ran student sessions on Wireshark, Linux administration, and defensive security',
-      'Helped organize internal CTF challenges and coordinated student project teams',
+      'Managing 5 specialized engineering teams: Cybersecurity, Networks, IoT, App Dev, and Web Dev',
+      'Leading both technical workshop execution and creative design & event organizing for campus tech initiatives',
+      'Mentoring junior cohorts in network packet analysis, CTF challenges, Linux internals, and web/app architectures',
     ],
   },
   {

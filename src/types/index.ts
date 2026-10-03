@@ -138,8 +138,14 @@ export interface Club {
   organization: string;
   role: string;
   period: string;
+  membersCount?: string;
   description: string;
   responsibilities: string[];
+  managedTeams?: string[];
+  leadershipDomains?: {
+    technical: string;
+    nonTechnical: string;
+  };
   tags: string[];
   link?: string;
 }

@@ -14,12 +14,12 @@ export const achievements: Achievement[] = [
   },
   {
     id: 'ace-leadership-selection',
-    title: 'Selected as Project Lead & Core Member',
+    title: 'Appointed as Lead of Technical & Non-Technical Operations',
     organization: 'Association of Computing Engineers (ACE), SASTRA University',
     year: '2024',
     description:
-      'Recognized for technical aptitude in systems and cybersecurity to lead engineering initiatives and mentor junior student cohorts across technical clusters.',
+      'Selected to lead cross-functional operations across 350+ active student members. Directing technical execution alongside creative design and event organizing, while managing 5 engineering teams across Cybersecurity, Networks, IoT, App Dev, and Web Dev.',
     type: 'Leadership',
-    badge: 'Core Leadership',
+    badge: 'Dual Operations Lead',
   },
 ];
