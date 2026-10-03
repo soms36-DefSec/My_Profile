@@ -1,6 +1,6 @@
 import React from 'react';
 import { JourneyItem } from '../../types';
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface TimelineItemProps {
   item: JourneyItem;
@@ -29,17 +29,14 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isLast }) => {
         {/* Node indicator */}
         <div
           style={{
-            width: item.current ? '14px' : '10px',
-            height: item.current ? '14px' : '10px',
+            width: '8px',
+            height: '8px',
             borderRadius: '50%',
             backgroundColor: item.current ? 'var(--accent)' : 'var(--border-strong)',
-            border: item.current ? '3px solid rgba(255, 51, 85, 0.3)' : '2px solid var(--bg-primary)',
-            boxShadow: item.current ? '0 0 10px var(--accent)' : 'none',
-            zIndex: 2,
-            marginTop: '0.35rem',
+            marginTop: '0.45rem',
             flexShrink: 0,
+            zIndex: 2,
           }}
-          className={item.current ? 'pulse-indicator' : ''}
         />
 
         {/* Vertical linking line */}
@@ -47,23 +44,21 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isLast }) => {
           <div
             style={{
               position: 'absolute',
-              top: '18px',
+              top: '16px',
               bottom: 0,
               width: '1px',
-              backgroundColor: 'var(--border-default)',
+              backgroundColor: 'var(--border-subtle)',
               zIndex: 1,
             }}
           />
         )}
       </div>
 
-      {/* Content Card */}
+      {/* Content */}
       <div
-        className="surface-card"
         style={{
           flex: 1,
-          borderColor: item.current ? 'var(--border-accent)' : 'var(--border-subtle)',
-          backgroundColor: item.current ? 'var(--bg-surface-elevated)' : 'var(--bg-surface)',
+          paddingBottom: '0.5rem',
         }}
       >
         {/* Meta Header */}
@@ -71,50 +66,31 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isLast }) => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between',
+            gap: '0.75rem',
+            marginBottom: '0.35rem',
             flexWrap: 'wrap',
-            gap: '0.5rem',
-            marginBottom: '0.5rem',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span
-              className="font-mono"
-              style={{
-                fontSize: '0.75rem',
-                color: item.current ? 'var(--accent)' : 'var(--text-muted)',
-                fontWeight: 600,
-              }}
-            >
-              {item.period}
-            </span>
-            <span style={{ color: 'var(--border-strong)' }}>•</span>
-            <span
-              className="font-mono"
-              style={{
-                fontSize: '0.6875rem',
-                color: 'var(--cyan)',
-                border: '1px solid rgba(0, 210, 180, 0.25)',
-                padding: '0.05rem 0.35rem',
-                borderRadius: '2px',
-              }}
-            >
-              {item.category}
-            </span>
-          </div>
-
-          {item.current && (
-            <span
-              className="font-mono"
-              style={{
-                fontSize: '0.6875rem',
-                color: 'var(--accent-light)',
-                fontWeight: 600,
-              }}
-            >
-              [ACTIVE STATUS]
-            </span>
-          )}
+          <span
+            className="font-mono"
+            style={{
+              fontSize: '0.75rem',
+              color: item.current ? 'var(--accent)' : 'var(--text-muted)',
+              fontWeight: 600,
+            }}
+          >
+            {item.period}
+          </span>
+          <span style={{ color: 'var(--border-strong)' }}>•</span>
+          <span
+            className="font-mono"
+            style={{
+              fontSize: '0.75rem',
+              color: 'var(--text-muted)',
+            }}
+          >
+            {item.category}
+          </span>
         </div>
 
         {/* Title & Organization */}
@@ -132,8 +108,8 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isLast }) => {
         <div
           className="font-mono"
           style={{
-            fontSize: '0.75rem',
-            color: 'var(--text-muted)',
+            fontSize: '0.8125rem',
+            color: 'var(--text-secondary)',
             marginBottom: '0.75rem',
           }}
         >
@@ -143,9 +119,9 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isLast }) => {
         {/* Description */}
         <p
           style={{
-            fontSize: '0.875rem',
+            fontSize: '0.9375rem',
             color: 'var(--text-secondary)',
-            lineHeight: 1.6,
+            lineHeight: 1.65,
             marginBottom: item.highlights ? '0.75rem' : '0',
           }}
         >
@@ -160,13 +136,14 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isLast }) => {
                 key={idx}
                 style={{
                   display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '0.45rem',
+                  alignItems: 'baseline',
+                  gap: '0.5rem',
                   fontSize: '0.8125rem',
                   color: 'var(--text-secondary)',
+                  lineHeight: 1.5,
                 }}
               >
-                <span style={{ color: 'var(--accent)', marginTop: '1px' }}>▪</span>
+                <span style={{ color: 'var(--accent)', fontSize: '0.75rem' }}>—</span>
                 <span>{hl}</span>
               </div>
             ))}
@@ -180,17 +157,17 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, isLast }) => {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="tech-pill"
+              className="text-link--accent"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.35rem',
-                fontSize: '0.6875rem',
-                padding: '0.2rem 0.5rem',
+                gap: '0.3rem',
+                fontSize: '0.8125rem',
+                fontWeight: 500,
               }}
             >
-              <span>VIEW REPO / DOCS</span>
-              <ExternalLink size={11} />
+              <span>View details</span>
+              <ArrowUpRight size={13} />
             </a>
           </div>
         )}

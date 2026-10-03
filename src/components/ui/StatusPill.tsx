@@ -2,7 +2,6 @@ import React from 'react';
 
 interface StatusPillProps {
   label: string;
-  state?: 'active' | 'building' | 'exploring';
   details?: string;
   className?: string;
 }
@@ -18,30 +17,19 @@ export const StatusPill: React.FC<StatusPillProps> = ({
       style={{
         display: 'inline-flex',
         alignItems: 'center',
-        gap: '0.625rem',
-        padding: '0.35rem 0.85rem',
-        backgroundColor: 'rgba(255, 51, 85, 0.06)',
-        border: '1px solid rgba(255, 51, 85, 0.25)',
+        gap: '0.5rem',
+        padding: '0.25rem 0.65rem',
+        backgroundColor: 'rgba(255, 255, 255, 0.03)',
+        border: '1px solid var(--border-default)',
         borderRadius: 'var(--radius-xs)',
         fontSize: '0.75rem',
         fontFamily: 'var(--font-mono)',
-        letterSpacing: '0.06em',
-        color: 'var(--text-primary)',
+        color: 'var(--text-secondary)',
       }}
       title={details}
     >
-      <span
-        style={{
-          width: '6px',
-          height: '6px',
-          borderRadius: '50%',
-          backgroundColor: 'var(--accent)',
-          boxShadow: '0 0 8px var(--accent)',
-          display: 'inline-block',
-        }}
-        className="pulse-indicator"
-      />
-      <span style={{ fontWeight: 600, color: 'var(--accent-light)' }}>
+      <span className="status-dot" style={{ backgroundColor: 'var(--accent)' }} />
+      <span style={{ fontWeight: 500, color: 'var(--text-primary)' }}>
         {label}
       </span>
     </div>

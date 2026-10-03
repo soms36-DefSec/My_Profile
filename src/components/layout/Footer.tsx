@@ -51,45 +51,44 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p
-              className="font-mono"
               style={{
-                fontSize: '0.75rem',
+                fontSize: '0.8125rem',
                 color: 'var(--text-muted)',
               }}
             >
-              Built with React 19 + TypeScript + Vite // Deployed via GitHub Pages
+              Built with React, TypeScript, and Vite. Deployed on GitHub Pages.
             </p>
           </div>
 
           {/* Social Channels & Back to Top */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
             <a
               href={`https://github.com/${profile.githubUsername}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
-              className="tech-pill"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+              className="text-link"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8125rem' }}
             >
               <GithubIcon size={14} />
-              <span>GitHub</span>
+              <span>GitHub ↗</span>
             </a>
             <a
               href="https://www.linkedin.com/in/soms36/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
-              className="tech-pill"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+              className="text-link"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8125rem' }}
             >
               <LinkedinIcon size={14} />
-              <span>LinkedIn</span>
+              <span>LinkedIn ↗</span>
             </a>
             <a
               href={`mailto:${profile.email}`}
               aria-label="Direct Email"
-              className="tech-pill"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+              className="text-link"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.8125rem' }}
             >
               <Mail size={14} />
               <span>Email</span>
@@ -97,11 +96,11 @@ export const Footer: React.FC = () => {
             <button
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="tech-pill tech-pill--accent"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+              className="text-link--accent"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.8125rem' }}
             >
               <ArrowUp size={14} />
-              <span>TOP</span>
+              <span>Top</span>
             </button>
           </div>
         </div>
@@ -116,16 +115,15 @@ export const Footer: React.FC = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '1rem',
-            fontSize: '0.75rem',
+            fontSize: '0.8125rem',
             color: 'var(--text-muted)',
           }}
-          className="font-mono"
         >
           <div>
-            © {currentYear} {profile.name} ({profile.handle}). All rights reserved.
+            © {currentYear} {profile.name} ({profile.handle})
           </div>
-          <div>
-            SYS::LOC [{profile.location.city}, {profile.location.country}] // STATUS: OPERATIONAL
+          <div className="font-mono" style={{ fontSize: '0.75rem' }}>
+            {profile.location.city}, {profile.location.country}
           </div>
         </div>
       </div>

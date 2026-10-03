@@ -38,9 +38,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1rem',
+        padding: '1.25rem',
         backgroundColor: 'rgba(5, 7, 12, 0.85)',
-        backdropFilter: 'blur(8px)',
+        backdropFilter: 'blur(6px)',
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
@@ -50,13 +50,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         className="surface-card"
         style={{
           width: '100%',
-          maxWidth: '820px',
-          maxHeight: '90vh',
+          maxWidth: '780px',
+          maxHeight: '88vh',
           overflowY: 'auto',
           backgroundColor: 'var(--bg-surface-elevated)',
           borderColor: 'var(--border-strong)',
           padding: '2rem',
-          boxShadow: '0 20px 40px rgba(0, 0, 0, 0.8)',
+          boxShadow: '0 20px 40px rgba(0, 0, 0, 0.7)',
           position: 'relative',
         }}
       >
@@ -86,20 +86,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 style={{
                   fontSize: '0.75rem',
                   color: 'var(--accent)',
-                  fontWeight: 600,
-                  letterSpacing: '0.05em',
+                  fontWeight: 500,
                 }}
               >
-                // PROJECT SPECIFICATION
+                Project Details
               </span>
+              <span style={{ color: 'var(--border-strong)' }}>•</span>
               <span
                 className="font-mono"
                 style={{
-                  fontSize: '0.6875rem',
+                  fontSize: '0.75rem',
                   color: 'var(--text-muted)',
-                  border: '1px solid var(--border-default)',
-                  padding: '0.1rem 0.4rem',
-                  borderRadius: '2px',
                 }}
               >
                 {project.category}
@@ -108,10 +105,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <h3
               id="modal-project-title"
               style={{
-                fontSize: '1.5rem',
-                fontWeight: 800,
+                fontSize: '1.4rem',
+                fontWeight: 700,
                 color: 'var(--text-primary)',
-                lineHeight: 1.2,
+                lineHeight: 1.25,
               }}
             >
               {project.title}
@@ -146,27 +143,26 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </button>
         </div>
 
-        {/* Funding Notice (if applicable) */}
+        {/* Funding Notice */}
         {project.fundingNotice && (
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '0.6rem',
-              padding: '0.75rem 1rem',
-              backgroundColor: 'rgba(255, 51, 85, 0.08)',
-              border: '1px solid rgba(255, 51, 85, 0.25)',
+              padding: '0.65rem 0.85rem',
+              backgroundColor: 'rgba(244, 63, 94, 0.06)',
+              border: '1px solid rgba(244, 63, 94, 0.2)',
               borderRadius: 'var(--radius-xs)',
               marginBottom: '1.5rem',
             }}
           >
-            <ShieldCheck size={18} color="var(--accent)" />
+            <ShieldCheck size={16} color="var(--accent)" />
             <span
-              className="font-mono"
               style={{
                 fontSize: '0.8125rem',
                 color: 'var(--accent-light)',
-                fontWeight: 600,
+                fontWeight: 500,
               }}
             >
               {project.fundingNotice}
@@ -177,16 +173,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Detailed Narrative */}
         <div style={{ marginBottom: '1.75rem' }}>
           <h4
-            className="font-mono"
             style={{
-              fontSize: '0.8125rem',
-              color: 'var(--text-muted)',
-              marginBottom: '0.6rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
+              fontSize: '0.875rem',
+              fontWeight: 600,
+              color: 'var(--text-primary)',
+              marginBottom: '0.5rem',
             }}
           >
-            Overview & Architecture Purpose
+            Overview & Technical Goal
           </h4>
           <p
             style={{
@@ -199,7 +193,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </p>
         </div>
 
-        {/* Architecture Schematic (if available) */}
+        {/* Architecture Schematic */}
         {project.architecture && (
           <div
             style={{
@@ -220,23 +214,21 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             >
               <Layers size={16} color="var(--cyan)" />
               <span
-                className="font-mono"
                 style={{
                   fontSize: '0.8125rem',
                   fontWeight: 600,
                   color: 'var(--text-primary)',
-                  letterSpacing: '0.05em',
                 }}
               >
-                SYSTEM TOPOLOGY & PIPELINE LAYERS
+                Pipeline Architecture & Subsystems
               </span>
             </div>
 
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-                gap: '1rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+                gap: '0.85rem',
               }}
             >
               {project.architecture.layers.map((layer, idx) => (
@@ -245,7 +237,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.02)',
                     border: '1px solid var(--border-subtle)',
-                    padding: '0.85rem',
+                    padding: '0.75rem',
                     borderRadius: 'var(--radius-xs)',
                   }}
                 >
@@ -255,26 +247,25 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                       fontSize: '0.75rem',
                       color: 'var(--accent)',
                       fontWeight: 600,
-                      marginBottom: '0.4rem',
+                      marginBottom: '0.35rem',
                     }}
                   >
-                    0{idx + 1} / {layer.name}
+                    0{idx + 1}. {layer.name}
                   </div>
                   <ul style={{ listStyle: 'none', paddingLeft: 0, margin: 0 }}>
                     {layer.items.map((item, itemIdx) => (
                       <li
                         key={itemIdx}
-                        className="font-mono"
                         style={{
                           fontSize: '0.75rem',
                           color: 'var(--text-secondary)',
-                          marginBottom: '0.25rem',
+                          marginBottom: '0.2rem',
                           display: 'flex',
                           alignItems: 'flex-start',
                           gap: '0.35rem',
                         }}
                       >
-                        <span style={{ color: 'var(--border-strong)' }}>•</span>
+                        <span style={{ color: 'var(--text-muted)' }}>•</span>
                         {item}
                       </li>
                     ))}
@@ -288,30 +279,29 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Technical Highlights */}
         <div style={{ marginBottom: '1.75rem' }}>
           <h4
-            className="font-mono"
             style={{
-              fontSize: '0.8125rem',
-              color: 'var(--text-muted)',
-              marginBottom: '0.75rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
+              fontSize: '0.875rem',
+              fontWeight: 600,
+              color: 'var(--text-primary)',
+              marginBottom: '0.65rem',
             }}
           >
-            Engineering Highlights
+            Key Implementation Details
           </h4>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
             {project.highlights.map((highlight, idx) => (
               <div
                 key={idx}
                 style={{
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: '0.6rem',
+                  gap: '0.55rem',
                   fontSize: '0.875rem',
                   color: 'var(--text-secondary)',
+                  lineHeight: 1.5,
                 }}
               >
-                <CheckCircle2 size={16} color="var(--accent)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <CheckCircle2 size={15} color="var(--accent)" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <span>{highlight}</span>
               </div>
             ))}
@@ -321,16 +311,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Technology Stack Tags */}
         <div style={{ marginBottom: '2rem' }}>
           <h4
-            className="font-mono"
             style={{
-              fontSize: '0.8125rem',
-              color: 'var(--text-muted)',
-              marginBottom: '0.6rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
+              fontSize: '0.875rem',
+              fontWeight: 600,
+              color: 'var(--text-primary)',
+              marginBottom: '0.5rem',
             }}
           >
-            Technology Arsenal
+            Technologies Used
           </h4>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
             {project.technologies.map((tech) => (
@@ -355,17 +343,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               href={project.repositoryUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="tech-pill tech-pill--accent"
-              style={{
-                padding: '0.55rem 1rem',
-                fontSize: '0.8125rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-              }}
+              className="text-link text-link--accent"
+              style={{ fontSize: '0.8125rem' }}
             >
-              <GithubIcon size={15} />
-              <span>SOURCE CODE ↗</span>
+              <GithubIcon size={14} />
+              <span>View source code ↗</span>
             </a>
           )}
           {project.liveUrl && (
@@ -373,25 +355,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="tech-pill tech-pill--cyan"
-              style={{
-                padding: '0.55rem 1rem',
-                fontSize: '0.8125rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-              }}
+              className="text-link"
+              style={{ fontSize: '0.8125rem' }}
             >
-              <ExternalLink size={15} />
-              <span>LIVE DEMO ↗</span>
+              <ExternalLink size={14} />
+              <span>Live demo ↗</span>
             </a>
           )}
           <button
             onClick={onClose}
             className="tech-pill"
-            style={{ padding: '0.55rem 1rem', fontSize: '0.8125rem' }}
+            style={{ padding: '0.4rem 0.85rem', fontSize: '0.8125rem' }}
           >
-            CLOSE
+            Close
           </button>
         </div>
       </div>

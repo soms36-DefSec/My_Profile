@@ -8,13 +8,12 @@ export const clubs: Club[] = [
     role: 'Project Lead & Core Member',
     period: '2024 – Present',
     description:
-      'The premier computing and engineering student association at SASTRA University, dedicated to fostering advanced technical skills in systems, cybersecurity, cloud, and software engineering.',
+      'The technical computing student association at SASTRA University, dedicated to peer-to-peer engineering workshops, cybersecurity challenges, and practical software projects.',
     responsibilities: [
-      'Leading technical project initiatives and guiding junior student engineers in systems and defensive security topics',
-      'Designing and coordinating CTF (Capture The Flag) challenges focusing on network analysis, cryptography, and web exploitation',
-      'Organizing hands-on technical workshops covering Linux system administration, Git workflows, and cloud architecture',
-      'Collaborating with faculty and student peers to cultivate an active builder and security research culture on campus',
+      'Organizing student workshops on Linux administration, networking fundamentals, and defense concepts',
+      'Designing CTF challenges centered on packet analysis, web security, and basic cryptography',
+      'Guiding first- and second-year peers on building practical programming projects and using Git effectively',
     ],
-    tags: ['Technical Leadership', 'CTF Workshops', 'Systems Engineering', 'Peer Mentorship'],
+    tags: ['Technical Leadership', 'CTF Challenges', 'Linux Workshops', 'Peer Mentoring'],
   },
 ];

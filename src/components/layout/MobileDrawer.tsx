@@ -79,17 +79,6 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
           >
             {profile.handle}<span style={{ color: 'var(--accent)' }}>.</span>
           </span>
-          <span
-            className="font-mono"
-            style={{
-              fontSize: '0.6875rem',
-              color: 'var(--text-muted)',
-              border: '1px solid var(--border-subtle)',
-              padding: '0.1rem 0.35rem',
-            }}
-          >
-            SYS::NAV
-          </span>
         </div>
 
         <button
@@ -152,14 +141,13 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
               </div>
               {isActive && (
                 <span
-                  className="font-mono"
                   style={{
-                    fontSize: '0.75rem',
-                    color: 'var(--accent)',
+                    width: '6px',
+                    height: '6px',
+                    borderRadius: '50%',
+                    backgroundColor: 'var(--accent)',
                   }}
-                >
-                  [ACTIVE]
-                </span>
+                />
               )}
             </button>
           );
@@ -181,33 +169,52 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
             href={`https://github.com/${profile.githubUsername}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="tech-pill tech-pill--accent"
-            style={{ flex: 1, justifyContent: 'center', padding: '0.6rem 0', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+            className="text-link"
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              padding: '0.6rem 0',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              border: '1px solid var(--border-default)',
+              borderRadius: 'var(--radius-xs)',
+              fontSize: '0.8125rem',
+            }}
           >
             <GithubIcon size={16} />
-            <span>GITHUB ↗</span>
+            <span>GitHub ↗</span>
           </a>
           <a
             href="https://www.linkedin.com/in/soms36/"
             target="_blank"
             rel="noopener noreferrer"
-            className="tech-pill"
-            style={{ flex: 1, justifyContent: 'center', padding: '0.6rem 0', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+            className="text-link"
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              padding: '0.6rem 0',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              border: '1px solid var(--border-default)',
+              borderRadius: 'var(--radius-xs)',
+              fontSize: '0.8125rem',
+            }}
           >
             <LinkedinIcon size={16} />
-            <span>LINKEDIN ↗</span>
+            <span>LinkedIn ↗</span>
           </a>
         </div>
 
         <div
-          className="font-mono"
           style={{
-            fontSize: '0.6875rem',
+            fontSize: '0.75rem',
             color: 'var(--text-muted)',
             textAlign: 'center',
           }}
         >
-          {profile.location.city}, {profile.location.country} // {profile.location.coordinates}
+          {profile.location.city}, {profile.location.country}
         </div>
       </div>
     </div>

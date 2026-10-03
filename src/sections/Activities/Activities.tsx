@@ -2,158 +2,142 @@ import React from 'react';
 import { activities } from '../../data/activities';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { TechBadge } from '../../components/ui/TechBadge';
-import { Terminal, Flag, Presentation, GitBranch, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 export const Activities: React.FC = () => {
-  const getActivityIcon = (type: string) => {
-    switch (type) {
-      case 'CTF & Defense':
-        return <Flag size={16} color="var(--accent)" />;
-      case 'Workshop & Mentorship':
-        return <Presentation size={16} color="var(--cyan)" />;
-      case 'Open Source':
-        return <GitBranch size={16} color="var(--accent-light)" />;
-      default:
-        return <Terminal size={16} color="var(--amber)" />;
-    }
-  };
-
   return (
     <section id="activities" className="section">
       <div className="container">
         <SectionHeader
-          number="07 / ACTIVITY"
-          title="Activities, CTFs & Demonstrations"
-          subtitle="Hands-on peer bootcamps, technical workshops, and open-source defensive research."
-          tag="TECHNICAL LOG & FIELD WORK"
+          number="07 / ACTIVITIES"
+          title="Workshops, demos & initiatives"
+          subtitle="Peer bootcamps, technical demonstrations, and open-source contributions."
         />
 
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '1.25rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.75rem',
+            maxWidth: '900px',
           }}
         >
           {activities.map((activity) => (
-            <div
+            <article
               key={activity.id}
-              className="surface-card"
               style={{
+                borderTop: '1px solid var(--border-subtle)',
+                paddingTop: '1.25rem',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                gap: '0.5rem',
               }}
             >
-              <div>
-                {/* Meta line */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '0.5rem',
-                    marginBottom: '0.75rem',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                    {getActivityIcon(activity.type)}
-                    <span
-                      className="font-mono"
-                      style={{
-                        fontSize: '0.75rem',
-                        color: 'var(--accent-light)',
-                        fontWeight: 600,
-                      }}
-                    >
-                      {activity.type}
-                    </span>
-                  </div>
-
+              {/* Meta Line */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '0.5rem',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <span
                     className="font-mono"
                     style={{
-                      fontSize: '0.6875rem',
+                      fontSize: '0.75rem',
+                      color: 'var(--accent)',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {activity.type}
+                  </span>
+                  <span style={{ color: 'var(--border-strong)' }}>•</span>
+                  <span
+                    className="font-mono"
+                    style={{
+                      fontSize: '0.75rem',
                       color: 'var(--text-muted)',
                     }}
                   >
-                    {activity.date}
+                    {activity.organization}
                   </span>
                 </div>
 
-                <h3
-                  style={{
-                    fontSize: '1.125rem',
-                    fontWeight: 700,
-                    color: 'var(--text-primary)',
-                    marginBottom: '0.25rem',
-                  }}
-                >
-                  {activity.title}
-                </h3>
-
-                <div
+                <span
                   className="font-mono"
                   style={{
                     fontSize: '0.75rem',
                     color: 'var(--text-muted)',
-                    marginBottom: '0.75rem',
                   }}
                 >
-                  {activity.organization}
-                </div>
-
-                <p
-                  style={{
-                    fontSize: '0.875rem',
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.6,
-                    marginBottom: '1rem',
-                  }}
-                >
-                  {activity.description}
-                </p>
+                  {activity.date}
+                </span>
               </div>
 
-              <div>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '0.5rem',
-                    borderTop: '1px solid var(--border-subtle)',
-                    paddingTop: '0.75rem',
-                  }}
-                >
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
-                    {activity.tags.map((tag) => (
-                      <TechBadge key={tag} name={tag} />
-                    ))}
-                  </div>
+              {/* Title */}
+              <h3
+                style={{
+                  fontSize: '1.125rem',
+                  fontWeight: 700,
+                  color: 'var(--text-primary)',
+                  marginTop: '0.1rem',
+                  marginBottom: '0.2rem',
+                }}
+              >
+                {activity.title}
+              </h3>
 
-                  {activity.link && (
-                    <a
-                      href={activity.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="tech-pill"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.3rem',
-                        fontSize: '0.6875rem',
-                        padding: '0.15rem 0.45rem',
-                      }}
-                    >
-                      <span>VIEW</span>
-                      <ExternalLink size={10} />
-                    </a>
-                  )}
+              {/* Description */}
+              <p
+                style={{
+                  fontSize: '0.875rem',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                {activity.description}
+              </p>
+
+              {/* Bottom Tags & Link */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '0.75rem',
+                  flexWrap: 'wrap',
+                  marginTop: '0.5rem',
+                }}
+              >
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+                  {activity.tags.map((tag) => (
+                    <TechBadge key={tag} name={tag} />
+                  ))}
                 </div>
+
+                {activity.link && (
+                  <a
+                    href={activity.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-link"
+                    style={{
+                      fontSize: '0.8125rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.3rem',
+                    }}
+                  >
+                    <span>View ↗</span>
+                    <ExternalLink size={12} />
+                  </a>
+                )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

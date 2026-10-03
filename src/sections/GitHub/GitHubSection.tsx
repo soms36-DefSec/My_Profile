@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { profile } from '../../data/profile';
 import { SectionHeader } from '../../components/ui/SectionHeader';
-import { ExternalLink, Code2 } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { GithubIcon } from '../../components/ui/Icons';
 
 interface RepoSummary {
@@ -13,7 +13,6 @@ interface RepoSummary {
 }
 
 export const GitHubSection: React.FC = () => {
-  // Pre-configured local repository cache (guaranteed to render offline without API rate limits)
   const fallbackRepos: RepoSummary[] = [
     {
       name: 'InsiEDR_Server',
@@ -53,7 +52,6 @@ export const GitHubSection: React.FC = () => {
   const [repos] = useState<RepoSummary[]>(fallbackRepos);
   const [publicRepoCount, setPublicRepoCount] = useState<number | null>(7);
 
-  // Progressive enhancement: optional fetch without any token
   useEffect(() => {
     let isMounted = true;
     fetch(`https://api.github.com/users/${profile.githubUsername}`)
@@ -67,7 +65,7 @@ export const GitHubSection: React.FC = () => {
         }
       })
       .catch(() => {
-        // Silent fallback to local cache
+        // Fallback to local cache
       });
 
     return () => {
@@ -80,68 +78,40 @@ export const GitHubSection: React.FC = () => {
       <div className="container">
         <SectionHeader
           number="10 / CODE"
-          title="Open Source & GitHub Repositories"
-          subtitle="Explore public repositories, security tools, and telemetry engines published under soms36-DefSec."
-          tag="GITHUB ECOSYSTEM"
+          title="Open source & repositories"
+          subtitle="Public repositories and security experiments published under github.com/soms36-DefSec."
         />
 
-        {/* GitHub Header Card */}
+        {/* Profile Link Header Bar */}
         <div
-          className="surface-card"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '1.25rem',
+            gap: '1rem',
             marginBottom: '2rem',
-            borderColor: 'var(--border-strong)',
-            backgroundColor: 'var(--bg-surface-elevated)',
+            padding: '1.25rem 1.5rem',
+            border: '1px solid var(--border-default)',
+            backgroundColor: 'var(--bg-surface)',
+            borderRadius: 'var(--radius-xs)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div
-              style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: 'var(--radius-xs)',
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid var(--border-default)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <GithubIcon size={24} color="var(--text-primary)" />
-            </div>
-
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+            <GithubIcon size={22} color="var(--text-primary)" />
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <span style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                  github.com/{profile.githubUsername}
-                </span>
-                <span
-                  className="font-mono"
-                  style={{
-                    fontSize: '0.6875rem',
-                    color: 'var(--accent)',
-                    border: '1px solid rgba(255, 51, 85, 0.3)',
-                    padding: '0.1rem 0.4rem',
-                    borderRadius: '2px',
-                  }}
-                >
-                  VERIFIED BUILDER
-                </span>
+              <div style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                github.com/{profile.githubUsername}
               </div>
               <div
                 className="font-mono"
                 style={{
                   fontSize: '0.75rem',
                   color: 'var(--text-muted)',
-                  marginTop: '0.2rem',
+                  marginTop: '0.15rem',
                 }}
               >
-                {publicRepoCount !== null ? `${publicRepoCount} Public Repositories` : 'Active Security Builder'} // CloudSec & DevSecOps
+                {publicRepoCount !== null ? `${publicRepoCount} public repositories` : 'Active on GitHub'}
               </div>
             </div>
           </div>
@@ -150,17 +120,17 @@ export const GitHubSection: React.FC = () => {
             href={`https://github.com/${profile.githubUsername}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="tech-pill tech-pill--accent"
+            className="text-link--accent"
             style={{
-              padding: '0.55rem 1.1rem',
               fontSize: '0.8125rem',
+              fontWeight: 600,
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.5rem',
+              gap: '0.35rem',
             }}
           >
-            <GithubIcon size={15} />
-            <span>FOLLOW ON GITHUB ↗</span>
+            <span>View GitHub profile</span>
+            <ExternalLink size={13} />
           </a>
         </div>
 
@@ -175,11 +145,21 @@ export const GitHubSection: React.FC = () => {
           {repos.map((repo) => (
             <div
               key={repo.name}
-              className="surface-card"
               style={{
+                border: '1px solid var(--border-default)',
+                backgroundColor: 'var(--bg-surface)',
+                borderRadius: 'var(--radius-xs)',
+                padding: '1.25rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
+                transition: 'border-color var(--transition-fast)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--border-strong)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--border-default)';
               }}
             >
               <div>
@@ -189,34 +169,29 @@ export const GitHubSection: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     gap: '0.5rem',
-                    marginBottom: '0.6rem',
+                    marginBottom: '0.5rem',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <Code2 size={16} color="var(--accent)" />
-                    <span
-                      style={{
-                        fontSize: '1rem',
-                        fontWeight: 700,
-                        color: 'var(--text-primary)',
-                      }}
-                    >
-                      {repo.name}
-                    </span>
-                  </div>
+                  <span
+                    style={{
+                      fontSize: '0.9375rem',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    {repo.name}
+                  </span>
 
                   {repo.isPinned && (
                     <span
                       className="font-mono"
                       style={{
-                        fontSize: '0.625rem',
-                        color: 'var(--cyan)',
-                        border: '1px solid rgba(0, 210, 180, 0.3)',
-                        padding: '0.1rem 0.35rem',
-                        borderRadius: '2px',
+                        fontSize: '0.6875rem',
+                        color: 'var(--text-muted)',
                       }}
                     >
-                      PINNED
+                      Featured
                     </span>
                   )}
                 </div>
@@ -225,7 +200,7 @@ export const GitHubSection: React.FC = () => {
                   style={{
                     fontSize: '0.8125rem',
                     color: 'var(--text-secondary)',
-                    lineHeight: 1.5,
+                    lineHeight: 1.55,
                     marginBottom: '1rem',
                   }}
                 >
@@ -267,17 +242,15 @@ export const GitHubSection: React.FC = () => {
                   href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="tech-pill"
+                  className="text-link"
                   style={{
-                    fontSize: '0.6875rem',
-                    padding: '0.2rem 0.5rem',
+                    fontSize: '0.75rem',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.3rem',
                   }}
                 >
-                  <span>SOURCE</span>
-                  <ExternalLink size={10} />
+                  <span>Repository ↗</span>
                 </a>
               </div>
             </div>

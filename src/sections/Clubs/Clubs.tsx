@@ -2,40 +2,33 @@ import React from 'react';
 import { clubs } from '../../data/clubs';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { TechBadge } from '../../components/ui/TechBadge';
-import { Users, Award, CheckCircle2 } from 'lucide-react';
 
 export const Clubs: React.FC = () => {
   return (
     <section id="clubs" className="section" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
         <SectionHeader
-          number="06 / CLUBS"
-          title="Clubs & Engineering Communities"
-          subtitle="Leadership, peer mentorship, collaborative security initiatives, and campus technical clusters."
-          tag="COMMUNITY & LEADERSHIP"
+          number="06 / COMMUNITY"
+          title="Campus leadership & community"
+          subtitle="Collaborative engineering initiatives, peer workshops, and student technical clusters."
         />
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
-            gap: '1.5rem',
-          }}
-        >
+        <div style={{ maxWidth: '900px' }}>
           {clubs.map((club) => (
             <div
               key={club.id}
-              className="surface-card"
               style={{
-                borderColor: 'var(--border-strong)',
-                backgroundColor: 'var(--bg-surface-elevated)',
+                border: '1px solid var(--border-default)',
+                backgroundColor: 'var(--bg-surface)',
+                borderRadius: 'var(--radius-xs)',
+                padding: '2rem',
               }}
             >
               {/* Header */}
               <div
                 style={{
                   display: 'flex',
-                  alignItems: 'flex-start',
+                  alignItems: 'baseline',
                   justifyContent: 'space-between',
                   gap: '1rem',
                   marginBottom: '1rem',
@@ -44,28 +37,19 @@ export const Clubs: React.FC = () => {
               >
                 <div>
                   <div
+                    className="font-mono"
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      marginBottom: '0.25rem',
+                      fontSize: '0.75rem',
+                      color: 'var(--accent)',
+                      fontWeight: 600,
+                      marginBottom: '0.35rem',
                     }}
                   >
-                    <Users size={18} color="var(--accent)" />
-                    <span
-                      className="font-mono"
-                      style={{
-                        fontSize: '0.75rem',
-                        color: 'var(--accent)',
-                        fontWeight: 600,
-                      }}
-                    >
-                      {club.organization}
-                    </span>
+                    {club.role} • {club.organization}
                   </div>
                   <h3
                     style={{
-                      fontSize: '1.25rem',
+                      fontSize: '1.35rem',
                       fontWeight: 800,
                       color: 'var(--text-primary)',
                     }}
@@ -78,83 +62,66 @@ export const Clubs: React.FC = () => {
                   className="font-mono"
                   style={{
                     fontSize: '0.75rem',
-                    color: 'var(--cyan)',
-                    border: '1px solid rgba(0, 210, 180, 0.3)',
-                    padding: '0.2rem 0.5rem',
-                    borderRadius: 'var(--radius-xs)',
+                    color: 'var(--text-muted)',
                   }}
                 >
                   {club.period}
                 </div>
               </div>
 
-              {/* Role Badge */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  padding: '0.25rem 0.6rem',
-                  backgroundColor: 'rgba(255, 51, 85, 0.08)',
-                  border: '1px solid rgba(255, 51, 85, 0.25)',
-                  borderRadius: 'var(--radius-xs)',
-                  fontSize: '0.8125rem',
-                  fontWeight: 600,
-                  color: 'var(--accent-light)',
-                  marginBottom: '1rem',
-                }}
-              >
-                <Award size={14} />
-                <span>{club.role}</span>
-              </div>
-
               {/* Description */}
               <p
                 style={{
-                  fontSize: '0.875rem',
+                  fontSize: '0.9375rem',
                   color: 'var(--text-secondary)',
-                  lineHeight: 1.6,
-                  marginBottom: '1.25rem',
+                  lineHeight: 1.65,
+                  marginBottom: '1.5rem',
                 }}
               >
                 {club.description}
               </p>
 
               {/* Responsibilities */}
-              <div style={{ marginBottom: '1.25rem' }}>
+              <div style={{ marginBottom: '1.5rem' }}>
                 <div
                   className="font-mono"
                   style={{
                     fontSize: '0.6875rem',
                     color: 'var(--text-muted)',
                     textTransform: 'uppercase',
-                    marginBottom: '0.5rem',
-                    letterSpacing: '0.05em',
+                    marginBottom: '0.6rem',
+                    letterSpacing: '0.04em',
                   }}
                 >
-                  // Key Contributions & Leadership
+                  Key Contributions & Leadership
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                <ul
+                  style={{
+                    listStyle: 'none',
+                    paddingLeft: 0,
+                    margin: 0,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem',
+                  }}
+                >
                   {club.responsibilities.map((resp, idx) => (
-                    <div
+                    <li
                       key={idx}
                       style={{
                         display: 'flex',
-                        alignItems: 'flex-start',
+                        alignItems: 'baseline',
                         gap: '0.5rem',
                         fontSize: '0.8125rem',
                         color: 'var(--text-secondary)',
+                        lineHeight: 1.5,
                       }}
                     >
-                      <CheckCircle2
-                        size={14}
-                        color="var(--accent)"
-                        style={{ flexShrink: 0, marginTop: '2px' }}
-                      />
+                      <span style={{ color: 'var(--accent)', fontSize: '0.75rem' }}>—</span>
                       <span>{resp}</span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
 
               {/* Tags */}
@@ -164,7 +131,7 @@ export const Clubs: React.FC = () => {
                   flexWrap: 'wrap',
                   gap: '0.35rem',
                   borderTop: '1px solid var(--border-subtle)',
-                  paddingTop: '0.85rem',
+                  paddingTop: '1rem',
                 }}
               >
                 {club.tags.map((tag) => (

@@ -1,10 +1,9 @@
 import React from 'react';
 
 interface SectionHeaderProps {
-  number: string;
+  number?: string;
   title: string;
   subtitle?: string;
-  tag?: string;
   align?: 'left' | 'center';
   className?: string;
 }
@@ -13,69 +12,40 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   number,
   title,
   subtitle,
-  tag,
   align = 'left',
   className = '',
 }) => {
   return (
     <div
-      className={`section-header ${align === 'center' ? 'text-center' : ''} ${className}`}
+      className={`section-header ${className}`}
       style={{
         marginBottom: '2.5rem',
         textAlign: align === 'center' ? 'center' : 'left',
       }}
     >
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.75rem',
-          justifyContent: align === 'center' ? 'center' : 'flex-start',
-          marginBottom: '0.5rem',
-        }}
-      >
-        <span
+      {number && (
+        <div
           className="font-mono"
           style={{
             fontSize: '0.8125rem',
             color: 'var(--accent)',
-            fontWeight: 600,
-            letterSpacing: '0.1em',
+            fontWeight: 500,
+            marginBottom: '0.4rem',
+            letterSpacing: '0.02em',
           }}
         >
           {number}
-        </span>
-        <span
-          style={{
-            display: 'inline-block',
-            width: '24px',
-            height: '1px',
-            backgroundColor: 'var(--border-strong)',
-          }}
-        />
-        {tag && (
-          <span
-            className="font-mono"
-            style={{
-              fontSize: '0.75rem',
-              color: 'var(--text-muted)',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-            }}
-          >
-            {tag}
-          </span>
-        )}
-      </div>
+        </div>
+      )}
 
       <h2
         style={{
-          fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
-          fontWeight: 800,
-          letterSpacing: '-0.025em',
+          fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+          fontWeight: 700,
           color: 'var(--text-primary)',
-          marginBottom: subtitle ? '0.5rem' : '0',
-          lineHeight: 1.15,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.25,
+          marginBottom: subtitle ? '0.45rem' : '0',
         }}
       >
         {title}
@@ -85,10 +55,10 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
         <p
           style={{
             color: 'var(--text-secondary)',
-            fontSize: '1rem',
-            maxWidth: '640px',
+            fontSize: '0.9375rem',
+            maxWidth: '620px',
             margin: align === 'center' ? '0 auto' : '0',
-            lineHeight: 1.5,
+            lineHeight: 1.6,
           }}
         >
           {subtitle}

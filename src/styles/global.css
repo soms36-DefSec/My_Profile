@@ -1,7 +1,7 @@
 @import './variables.css';
 @import './animations.css';
 
-/* CSS Reset & Base */
+/* Reset & Base Setup */
 *,
 *::before,
 *::after {
@@ -13,7 +13,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 1.5rem);
+  scroll-padding-top: calc(var(--header-height) + 2rem);
   color-scheme: dark;
 }
 
@@ -21,42 +21,49 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  position: relative;
   min-height: 100vh;
 }
 
-/* Engineering Technical Grid Background (Subtle & Performant) */
+/* Subtle Technical Grid (Gentle, low contrast, non-distracting) */
 .tech-grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-/* Subtle Top Radial Gradient */
-.hero-glow-overlay {
-  background: radial-gradient(
-    circle at 50% 0%,
-    rgba(255, 51, 85, 0.08) 0%,
-    rgba(9, 10, 15, 0) 70%
-  );
-}
-
-/* Typography Defaults */
-h1, h2, h3, h4, h5, h6 {
+/* Typography Hierarchy */
+h1, h2, h3, h4 {
   color: var(--text-primary);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.75vw, 2.125rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.1875rem;
+  font-weight: 600;
 }
 
 p {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 0.96875rem;
+  line-height: 1.7;
 }
 
 a {
@@ -76,7 +83,7 @@ code, pre, .font-mono {
   font-family: var(--font-mono);
 }
 
-/* Accessible Focus Ring */
+/* Accessible Focus States */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -84,8 +91,8 @@ code, pre, .font-mono {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -101,7 +108,7 @@ code, pre, .font-mono {
   background: var(--border-strong);
 }
 
-/* Container Utility */
+/* Container */
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -118,45 +125,39 @@ code, pre, .font-mono {
   }
 }
 
-/* Section Spacing */
+/* Sections */
 .section {
-  padding-top: var(--space-3xl);
-  padding-bottom: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
   position: relative;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 992px) {
   .section {
-    padding-top: var(--space-2xl);
-    padding-bottom: var(--space-2xl);
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
   }
 }
 
-/* Section Divider Line */
+/* Horizontal Subtle Divider */
 .section-divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--border-default) 15%,
-    var(--border-default) 85%,
-    transparent 100%
-  );
-  margin: 0 auto;
+  background-color: var(--border-subtle);
+  margin: 0;
 }
 
-/* Technical Badge / Tag */
+/* Clean Technical Tag */
 .tech-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.2rem 0.55rem;
+  padding: 0.15rem 0.5rem;
   font-size: 0.75rem;
   font-family: var(--font-mono);
   font-weight: 500;
   border-radius: var(--radius-xs);
-  background-color: var(--bg-surface);
+  background-color: rgba(255, 255, 255, 0.03);
   color: var(--text-secondary);
   border: 1px solid var(--border-default);
   transition: all var(--transition-fast);
@@ -169,39 +170,67 @@ code, pre, .font-mono {
 }
 
 .tech-pill--accent {
-  background-color: rgba(255, 51, 85, 0.08);
-  border-color: rgba(255, 51, 85, 0.3);
+  background-color: var(--accent-subtle);
+  border-color: rgba(244, 63, 94, 0.25);
   color: var(--accent-light);
 }
 
-.tech-pill--cyan {
-  background-color: rgba(0, 210, 180, 0.08);
-  border-color: rgba(0, 210, 180, 0.3);
-  color: var(--cyan);
+/* Text Links with Arrows */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
 }
 
-/* Surface Panel / Card */
+.text-link:hover {
+  color: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
+.text-link--accent {
+  color: var(--accent-light);
+}
+
+.text-link--accent:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.text-link--muted {
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+}
+
+.text-link--muted:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+/* Surface Panel / Card (Restrained borders, no cartoonish glows) */
 .surface-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: 1.5rem;
-  transition: all var(--transition-normal);
-  position: relative;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .surface-card:hover {
   border-color: var(--border-strong);
-  background-color: var(--bg-surface-elevated);
 }
 
-/* Skip to Content Link (Accessibility) */
+/* Skip link for accessibility */
 .skip-to-content {
   position: absolute;
   top: -100px;
   left: 1rem;
   background: var(--accent);
-  color: var(--text-inverse);
+  color: #fff;
   padding: 0.5rem 1rem;
   font-weight: 600;
   z-index: 9999;

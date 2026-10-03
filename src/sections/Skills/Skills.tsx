@@ -3,47 +3,30 @@ import { skills } from '../../data/skills';
 import { SkillCategory } from '../../types';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { TechBadge } from '../../components/ui/TechBadge';
-import { Cloud, Shield, Cpu, Terminal, Database } from 'lucide-react';
 
 export const Skills: React.FC = () => {
   const categories: SkillCategory[] = [
-    'Cloud & Infrastructure',
     'Defensive Security & SOC',
-    'AI & ML Security',
     'Systems & Languages',
+    'Cloud & Infrastructure',
+    'AI & ML Security',
     'Databases & Protocols',
   ];
-
-  const getCategoryIcon = (category: SkillCategory) => {
-    switch (category) {
-      case 'Cloud & Infrastructure':
-        return <Cloud size={18} color="var(--cyan)" />;
-      case 'Defensive Security & SOC':
-        return <Shield size={18} color="var(--accent)" />;
-      case 'AI & ML Security':
-        return <Cpu size={18} color="var(--accent-light)" />;
-      case 'Systems & Languages':
-        return <Terminal size={18} color="var(--cyan)" />;
-      case 'Databases & Protocols':
-        return <Database size={18} color="var(--amber)" />;
-    }
-  };
 
   return (
     <section id="skills" className="section">
       <div className="container">
         <SectionHeader
-          number="05 / SKILLS"
-          title="Technical Arsenal & Tooling"
-          subtitle="Grouped strictly by engineering discipline. No arbitrary percentage bars or vanity meters."
-          tag="DISCIPLINARY MATRIX"
+          number="04 / SKILLS"
+          title="Technical skills & tooling"
+          subtitle="Languages, architectures, and tools used across projects, research, and development."
         />
 
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '1.5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '2rem',
           }}
         >
           {categories.map((category) => {
@@ -51,63 +34,66 @@ export const Skills: React.FC = () => {
             return (
               <div
                 key={category}
-                className="surface-card"
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
+                  display: 'grid',
+                  gridTemplateColumns: 'minmax(220px, 280px) 1fr',
+                  gap: '2rem',
+                  borderTop: '1px solid var(--border-subtle)',
+                  paddingTop: '1.5rem',
+                  alignItems: 'baseline',
                 }}
+                className="skills-category-row"
               >
-                {/* Domain Header */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.625rem',
-                    marginBottom: '1.25rem',
-                    borderBottom: '1px solid var(--border-subtle)',
-                    paddingBottom: '0.75rem',
-                  }}
-                >
-                  {getCategoryIcon(category)}
+                <div>
                   <h3
                     style={{
-                      fontSize: '1.0625rem',
+                      fontSize: '1rem',
                       fontWeight: 700,
                       color: 'var(--text-primary)',
+                      marginBottom: '0.2rem',
                     }}
                   >
                     {category}
                   </h3>
+                  <span
+                    className="font-mono"
+                    style={{
+                      fontSize: '0.75rem',
+                      color: 'var(--text-muted)',
+                    }}
+                  >
+                    {categorySkills.length} technologies
+                  </span>
                 </div>
 
-                {/* Skills Grid */}
                 <div
                   style={{
                     display: 'flex',
                     flexWrap: 'wrap',
-                    gap: '0.5rem',
+                    gap: '0.45rem',
                   }}
                 >
                   {categorySkills.map((skill) => (
-                    <div
+                    <TechBadge
                       key={skill.name}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.4rem',
-                      }}
-                    >
-                      <TechBadge
-                        name={skill.name}
-                        variant={skill.featured ? 'accent' : 'default'}
-                      />
-                    </div>
+                      name={skill.name}
+                      variant={skill.featured ? 'accent' : 'default'}
+                    />
                   ))}
                 </div>
               </div>
             );
           })}
         </div>
+
+        <style>{`
+          @media (max-width: 768px) {
+            .skills-category-row {
+              grid-template-columns: 1fr !important;
+              gap: 1rem !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );

@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             transition: 'height var(--transition-normal)',
           }}
         >
-          {/* Logo / Callout */}
+          {/* Logo */}
           <a
             href="#"
             onClick={handleLogoClick}
@@ -94,32 +94,20 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.5rem',
+              gap: '0.4rem',
               textDecoration: 'none',
             }}
           >
             <span
               className="font-mono"
               style={{
-                fontSize: '1.125rem',
-                fontWeight: 800,
+                fontSize: '1rem',
+                fontWeight: 700,
                 color: 'var(--text-primary)',
-                letterSpacing: '0.05em',
+                letterSpacing: '0.02em',
               }}
             >
               {profile.handle}<span style={{ color: 'var(--accent)' }}>.</span>
-            </span>
-            <span
-              className="font-mono d-desktop-inline"
-              style={{
-                fontSize: '0.625rem',
-                color: 'var(--text-muted)',
-                border: '1px solid var(--border-subtle)',
-                padding: '0.1rem 0.35rem',
-                borderRadius: 'var(--radius-xs)',
-              }}
-            >
-              DEFSEC
             </span>
           </a>
 
@@ -181,15 +169,28 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               href={`https://github.com/${profile.githubUsername}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="tech-pill tech-pill--accent d-desktop-inline-flex"
+              className="d-desktop-inline-flex"
               style={{
                 alignItems: 'center',
                 gap: '0.4rem',
-                padding: '0.3rem 0.65rem',
-                fontSize: '0.75rem',
+                padding: '0.35rem 0.75rem',
+                fontSize: '0.8125rem',
+                fontWeight: 500,
+                color: 'var(--text-secondary)',
+                border: '1px solid var(--border-default)',
+                borderRadius: 'var(--radius-xs)',
+                transition: 'all var(--transition-fast)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = 'var(--text-primary)';
+                e.currentTarget.style.borderColor = 'var(--border-strong)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = 'var(--text-secondary)';
+                e.currentTarget.style.borderColor = 'var(--border-default)';
               }}
             >
-              <GithubIcon size={13} />
+              <GithubIcon size={14} />
               <span>GitHub ↗</span>
             </a>
 

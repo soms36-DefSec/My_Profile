@@ -1,58 +1,53 @@
 import { CurrentPursuits } from '../types';
 
 /**
- * / NOW — Real-time snapshot of what Someshwar is actively building, learning, exploring, and researching.
- * Update this single configuration object as priorities change.
+ * / NOW — What Someshwar is actively building, learning, exploring, and researching.
+ * Written in the spirit of Derek Sivers' /now page.
  */
 export const current: CurrentPursuits = {
   building: [
     {
-      title: 'InsiEDR Agent & Server',
-      desc: 'Developing low-overhead Windows telemetry collectors and high-throughput ClickHouse event ingestion for the MeitY-funded platform.',
+      title: 'InsiEDR Telemetry Sensor & Backend',
+      desc: 'Developing Windows telemetry collection and high-speed ClickHouse ingestion for the MeitY-funded insider-threat platform.',
       tag: 'MeitY Funded',
       link: 'https://github.com/soms36-DefSec/InsiEDR_Server',
     },
     {
-      title: 'Multi-Agent Security Oracles',
-      desc: 'Prototyping collaborative LLM workflows for contextual infrastructure vulnerability detection and auto-remediation.',
-      tag: 'AI Security',
-      link: 'https://github.com/soms36-DefSec/llm-iac-security',
+      title: 'Automation & Prototyping Tools',
+      desc: 'Writing focused Python utilities for security audits, log parsing, and routine automation.',
+      tag: 'Tooling',
+      link: 'https://github.com/soms36-DefSec/My_Scriptings',
     },
   ],
   learning: [
     {
-      title: 'Rust Systems Programming',
-      desc: 'Deep diving into memory safety, async runtimes (Tokio), and low-level kernel probes for endpoint telemetry sensors.',
+      title: 'Rust for Systems Programming',
+      desc: 'Working through ownership, concurrency, and async runtimes to write memory-safe sensor components.',
       tag: 'Systems',
     },
     {
-      title: 'Advanced eBPF & Windows Internals',
-      desc: 'Studying ETW (Event Tracing for Windows), system calls, and kernel telemetry collection mechanisms.',
+      title: 'Windows Internals & ETW',
+      desc: 'Studying Event Tracing for Windows (ETW), system call logging, and low-level process monitoring.',
       tag: 'OS Internals',
     },
   ],
   exploring: [
     {
-      title: 'AI/LLM Red Teaming & Guardrails',
-      desc: 'Exploring prompt injection surfaces, jailbreaking defenses, and evaluation benchmarks for LLM-based applications.',
+      title: 'AI/LLM Security Surfaces',
+      desc: 'Testing prompt injection risks and safety evaluation benchmarks for LLM-assisted coding and analysis tools.',
       tag: 'Security Research',
     },
     {
-      title: 'High-Concurrency Ingestion (ClickHouse)',
-      desc: 'Benchmarking real-time log ingestion, materialized views, and analytical querying at scale.',
-      tag: 'Data Infrastructure',
+      title: 'ClickHouse Query Performance',
+      desc: 'Testing materialized views and fast compression codecs for massive security event tables.',
+      tag: 'Databases',
     },
   ],
   researching: [
     {
-      title: 'Behavior-Based Anomaly Attribution',
-      desc: 'Evaluating hybrid models (Isolation Forest + XGBoost + RedRVFL) to minimize false positives in insider threat detection.',
+      title: 'Anomaly Scoring for Insider Threats',
+      desc: 'Testing combinations of CERT heuristic rules and Isolation Forest models to minimize false positive alerts.',
       tag: 'Applied ML',
-    },
-    {
-      title: 'Zero-Trust Telemetry Architectures',
-      desc: 'Investigating end-to-end encrypted telemetry transport over untrusted corporate networks using HPKE.',
-      tag: 'Cryptography',
     },
   ],
 };

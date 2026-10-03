@@ -20,12 +20,11 @@ export const Projects: React.FC = () => {
       <div className="container">
         <SectionHeader
           number="03 / WORK"
-          title="Featured Projects & Security Systems"
-          subtitle="Real-world engineering implementations: low-level endpoint telemetry, AI security scanning, and infrastructure automation."
-          tag="DEPLOYED & IN-DEVELOPMENT"
+          title="Projects & security systems"
+          subtitle="Implementations across endpoint telemetry, cloud security scanning, and systems automation."
         />
 
-        {/* Category Filter Pills */}
+        {/* Category Filters */}
         <div
           style={{
             display: 'flex',
@@ -40,15 +39,19 @@ export const Projects: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`tech-pill ${isActive ? 'tech-pill--accent' : ''}`}
                 style={{
-                  padding: '0.4rem 0.85rem',
+                  padding: '0.35rem 0.8rem',
                   fontSize: '0.8125rem',
+                  fontFamily: 'var(--font-mono)',
                   cursor: 'pointer',
+                  border: '1px solid',
                   borderColor: isActive ? 'var(--accent)' : 'var(--border-default)',
+                  backgroundColor: isActive ? 'rgba(244, 63, 94, 0.08)' : 'transparent',
+                  color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
+                  borderRadius: 'var(--radius-xs)',
+                  transition: 'all var(--transition-fast)',
                 }}
               >
-                {isActive && <span style={{ color: 'var(--accent)' }}>▶ </span>}
                 {cat}
               </button>
             );
@@ -73,7 +76,7 @@ export const Projects: React.FC = () => {
           ))}
         </div>
 
-        {/* Project Deep Dive Modal */}
+        {/* Project Technical Modal */}
         <ProjectModal
           project={activeModalProject}
           onClose={() => setActiveModalProject(null)}
