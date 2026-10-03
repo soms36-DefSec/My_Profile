@@ -24,7 +24,7 @@ export const Contact: React.FC = () => {
     <section id="contact" className="section" style={{ paddingBottom: '5rem' }}>
       <div className="container">
         <SectionHeader
-          number="11 / CONTACT"
+          number="12 / CONTACT"
           title="Get in touch"
           subtitle="Open for conversations around defensive security, systems engineering, research collaborations, and internships."
         />

@@ -13,6 +13,7 @@ import { Activities } from './sections/Activities/Activities';
 import { Achievements } from './sections/Achievements/Achievements';
 import { Now } from './sections/Now/Now';
 import { GitHubSection } from './sections/GitHub/GitHubSection';
+import { Hire } from './sections/Hire/Hire';
 import { Contact } from './sections/Contact/Contact';
 
 const sectionIds = [
@@ -26,6 +27,7 @@ const sectionIds = [
   'achievements',
   'now',
   'github',
+  'hire',
   'contact',
 ];
 
@@ -64,6 +66,8 @@ export const App: React.FC = () => {
         <Now />
         <div className="section-divider" />
         <GitHubSection />
+        <div className="section-divider" />
+        <Hire />
         <div className="section-divider" />
         <Contact />
       </main>

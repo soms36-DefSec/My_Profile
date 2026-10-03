@@ -18,6 +18,7 @@ const navLinks = [
   { label: 'Clubs', href: '#clubs', id: 'clubs' },
   { label: 'Activity', href: '#activities', id: 'activities' },
   { label: 'Now', href: '#now', id: 'now' },
+  { label: 'Hire', href: '#hire', id: 'hire' },
   { label: 'Contact', href: '#contact', id: 'contact' },
 ];
 
@@ -163,8 +164,40 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             })}
           </nav>
 
-          {/* Right Action: GitHub CTA & Mobile Toggle */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          {/* Right Action: Hire Me CTA & GitHub & Mobile Toggle */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <a
+              href="#hire"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('#hire');
+              }}
+              className="d-desktop-inline-flex"
+              style={{
+                alignItems: 'center',
+                gap: '0.35rem',
+                padding: '0.35rem 0.8rem',
+                fontSize: '0.8125rem',
+                fontWeight: 600,
+                backgroundColor: 'rgba(244, 63, 94, 0.1)',
+                color: 'var(--accent)',
+                border: '1px solid rgba(244, 63, 94, 0.35)',
+                borderRadius: 'var(--radius-xs)',
+                transition: 'all var(--transition-fast)',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--accent)';
+                e.currentTarget.style.color = '#ffffff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(244, 63, 94, 0.1)';
+                e.currentTarget.style.color = 'var(--accent)';
+              }}
+            >
+              <span>Hire Me</span>
+            </a>
+
             <a
               href={`https://github.com/${profile.githubUsername}`}
               target="_blank"

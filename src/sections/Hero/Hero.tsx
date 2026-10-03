@@ -15,6 +15,11 @@ export const Hero: React.FC = () => {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToHire = () => {
+    const el = document.getElementById('hire');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
       id="hero"
@@ -125,6 +130,35 @@ export const Hero: React.FC = () => {
           >
             <span>Explore projects</span>
             <ArrowDown size={15} />
+          </button>
+
+          <button
+            onClick={scrollToHire}
+            style={{
+              padding: '0.7rem 1.35rem',
+              fontSize: '0.875rem',
+              fontWeight: 600,
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              backgroundColor: 'rgba(244, 63, 94, 0.1)',
+              color: 'var(--accent)',
+              border: '1px solid rgba(244, 63, 94, 0.4)',
+              borderRadius: 'var(--radius-xs)',
+              cursor: 'pointer',
+              transition: 'all var(--transition-fast)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--accent)';
+              e.currentTarget.style.color = '#ffffff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(244, 63, 94, 0.1)';
+              e.currentTarget.style.color = 'var(--accent)';
+            }}
+          >
+            <span>Hire Me / Freelance</span>
+            <ArrowRight size={14} />
           </button>
 
           <a

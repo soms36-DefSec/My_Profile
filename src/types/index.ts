@@ -204,3 +204,21 @@ export interface SocialLink {
   description: string;
   icon: 'github' | 'linkedin' | 'mail' | 'terminal';
 }
+
+export interface HireRole {
+  id: string;
+  title: string;
+  scope: string;
+  description: string;
+  capabilities: string[];
+  tools: string[];
+  freelanceFocus: string;
+}
+
+export interface HiringOverview {
+  availability: string;
+  freelanceStatement: string;
+  engagementTypes: string[];
+  roles: HireRole[];
+}
+

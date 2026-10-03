@@ -133,7 +133,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({
                     color: isActive ? 'var(--accent)' : 'var(--text-muted)',
                   }}
                 >
-                  0{idx + 1}
+                  {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                 </span>
                 <span style={{ fontSize: '1.25rem', fontWeight: 600 }}>
                   {link.label}

@@ -9,9 +9,9 @@ export const profile: Profile = {
   headline: 'Building security tools, endpoint sensors, and cloud defense systems.',
   subheadline: 'Computer Science undergraduate at SASTRA University. Focused on endpoint telemetry, threat detection, cloud infrastructure, and practical AI security.',
   status: {
-    label: 'Building InsiEDR • Learning Rust',
+    label: 'Available for Hire & Freelance Contracts',
     state: 'active',
-    details: 'Funded under MeitY. Open to security engineering internships and research collaborations.',
+    details: 'Open for Freelance Security Projects, SOC Engineering, DevSecOps, Cloud Security, and Internships.',
   },
   location: {
     city: 'Tiruchirappalli',
