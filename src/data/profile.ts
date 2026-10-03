@@ -26,7 +26,7 @@ export const profile: Profile = {
     status: 'Undergraduate',
     notes: 'Focus on Operating Systems, Networks, Cloud Security, and Systems Programming',
   },
-  email: 'someshsuresh007@gmail.com',
+  email: 'someshsuresh0306@gmail.com',
   summary: [
     "I'm an undergraduate studying Computer Science & Engineering at SASTRA University in Tamil Nadu, India. I spend most of my time writing tools to understand how systems behave, how to monitor them effectively, and how to defend them.",
     "My main active project is InsiEDR, a behavior-based endpoint detection system funded by MeitY (Ministry of Electronics and Information Technology). It combines a Windows telemetry sensor with machine-learning anomaly scoring on the server side.",
