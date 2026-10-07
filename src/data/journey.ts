@@ -71,9 +71,9 @@ export const journey: JourneyItem[] = [
     organization: 'Association of Computing Engineers (ACE), SASTRA University',
     category: 'Leadership',
     description:
-      'Directed cross-functional operations across 7 technical and 4 non-technical teams (~350+ active members) to plan and execute technical workshops, lectures, and flagship events. Concurrently contributed as a Cybersecurity Team Member, driving hands-on security workshops, lectures, and technical project initiatives.',
+      'Directed cross-functional operations across 7 technical and 4 non-technical teams to plan and execute technical workshops, lectures, and flagship events. Concurrently contributed as a Cybersecurity Team Member, driving hands-on security workshops, lectures, and technical project initiatives.',
     highlights: [
-      'Directing operations across 7 technical teams and 4 non-technical teams (~350+ active members)',
+      'Directing operations across 7 technical teams and 4 non-technical teams',
       'Actively driving cybersecurity workshops on packet analysis, defensive security, and CTFs',
       'Mentoring student cohorts in systems programming, Linux internals, and web/app architectures',
     ],

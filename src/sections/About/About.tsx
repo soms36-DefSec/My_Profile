@@ -150,7 +150,7 @@ export const About: React.FC = () => {
                 Project Lead & Core Member, ACE
               </div>
               <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
-                Managing ~350+ members across 7 technical & 4 non-technical teams
+                Directing operations across 7 technical & 4 non-technical teams
               </div>
             </div>
 
