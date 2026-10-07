@@ -90,7 +90,7 @@ export interface Project {
 export type SkillCategory = 
   | 'Cloud & Infrastructure' 
   | 'Defensive Security & SOC' 
-  | 'AI & ML Security' 
+  | 'AI & Security Tooling' 
   | 'Systems & Languages' 
   | 'Databases & Protocols';
 
@@ -113,6 +113,7 @@ export interface FocusArea {
 }
 
 export type JourneyCategory = 
+  | 'Experience'
   | 'Academics' 
   | 'Leadership' 
   | 'Project' 

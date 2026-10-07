@@ -1,18 +1,29 @@
 import { Certification } from '../types';
 
 /**
- * Verified Certifications list.
- * NOTE: As per strict policy, no fake certifications (CEH, OSCP, etc.) are fabricated.
- * Add verified certifications here as they are earned. The UI dynamically adapts.
+ * Verified Certifications list aligned with official credentials.
+ * Aligned with Resume and GitHub Profile (No unverified certifications).
  */
 export const certifications: Certification[] = [
-  // Example for when Someshwar adds verified credentials:
-  // {
-  //   id: 'aws-sec-spec',
-  //   name: 'AWS Certified Security - Specialty',
-  //   issuer: 'Amazon Web Services',
-  //   issueDate: '2026',
-  //   credentialUrl: 'https://...',
-  //   status: 'Completed',
-  // },
+  {
+    id: 'guvi-web-pentest',
+    name: 'Web Application Penetration Testing',
+    issuer: 'GUVI Geek Networks, IITM Research Park',
+    issueDate: 'Verified Credential',
+    status: 'Completed',
+  },
+  {
+    id: 'guvi-cyber-sec',
+    name: 'Cyber Security, Ethical Hacking & Dark Web',
+    issuer: 'GUVI Geek Networks, IITM Research Park',
+    issueDate: 'Verified Credential',
+    status: 'Completed',
+  },
+  {
+    id: 'cisco-net-py',
+    name: 'Networking Basics & Python Essentials',
+    issuer: 'Cisco Networking Academy',
+    issueDate: 'Verified Credential',
+    status: 'Completed',
+  },
 ];

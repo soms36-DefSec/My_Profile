@@ -60,16 +60,36 @@ export const Hero: React.FC = () => {
         {/* Identity & Confident Editorial Headline */}
         <div style={{ maxWidth: '980px', marginBottom: '2.5rem' }}>
           <div
-            className="font-mono"
             style={{
-              fontSize: '0.875rem',
-              color: 'var(--accent)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem',
               marginBottom: '1rem',
-              fontWeight: 500,
-              letterSpacing: '0.02em',
+              flexWrap: 'wrap',
             }}
           >
-            {profile.name} • {profile.handle}
+            <span
+              className="font-mono"
+              style={{
+                fontSize: '0.875rem',
+                color: 'var(--accent)',
+                fontWeight: 600,
+                letterSpacing: '0.02em',
+              }}
+            >
+              {profile.name} • {profile.handle}
+            </span>
+            <span style={{ color: 'var(--text-muted)' }}>—</span>
+            <span
+              className="font-mono"
+              style={{
+                fontSize: '0.8125rem',
+                color: 'var(--cyan)',
+                fontWeight: 600,
+              }}
+            >
+              {profile.title}
+            </span>
           </div>
 
           <h1
@@ -83,7 +103,7 @@ export const Hero: React.FC = () => {
               maxWidth: '920px',
             }}
           >
-            Building security tools, endpoint sensors, and cloud defense systems.
+            {profile.headline}
           </h1>
 
           <p

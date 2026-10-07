@@ -16,21 +16,21 @@ export const GitHubSection: React.FC = () => {
   const fallbackRepos: RepoSummary[] = [
     {
       name: 'InsiEDR_Server',
-      description: 'Central backend, ML anomaly detection pipeline, and React 19 SOC console for the InsiEDR Insider Threat Detection and Response System.',
+      description: 'Central backend, behavioral detection heuristics pipeline, and React 19 SOC console for the InsiEDR Insider Threat Detection and Response System.',
       language: 'Python',
       url: 'https://github.com/soms36-DefSec/InsiEDR_Server',
       isPinned: true,
     },
     {
       name: 'InsiEDR_agent',
-      description: 'Windows endpoint telemetry agent collecting 30+ event channels with AES-256-GCM client encryption for InsiEDR.',
-      language: 'Python / Rust',
+      description: 'Native Windows endpoint telemetry agent in Rust capturing 30+ event channels with AES-256-GCM client encryption and offline SQLite queue.',
+      language: 'Rust',
       url: 'https://github.com/soms36-DefSec/InsiEDR_agent',
       isPinned: true,
     },
     {
       name: 'llm-iac-security',
-      description: 'Multi-agent LLM framework with RAG for autonomous AWS CloudFormation vulnerability scanning and patch synthesis.',
+      description: 'Multi-agent AI framework with RAG for autonomous Terraform & AWS CloudFormation vulnerability scanning and patch synthesis.',
       language: 'Python',
       url: 'https://github.com/soms36-DefSec/llm-iac-security',
       isPinned: true,

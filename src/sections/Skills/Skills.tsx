@@ -9,7 +9,7 @@ export const Skills: React.FC = () => {
     'Defensive Security & SOC',
     'Systems & Languages',
     'Cloud & Infrastructure',
-    'AI & ML Security',
+    'AI & Security Tooling',
     'Databases & Protocols',
   ];
 

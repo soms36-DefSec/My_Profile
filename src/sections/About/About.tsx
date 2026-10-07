@@ -10,7 +10,7 @@ export const About: React.FC = () => {
         <SectionHeader
           number="01 / ABOUT"
           title="Security engineering with a builder's approach"
-          subtitle="Connecting low-level telemetry, cloud defense, and AI systems."
+          subtitle="Specializing in threat detection, telemetry pipelines, and cloud defense."
         />
 
         <div
@@ -130,9 +130,16 @@ export const About: React.FC = () => {
                   marginBottom: '0.4rem',
                 }}
               >
-                Current Roles & Grants
+                Professional & Leadership Roles
               </div>
               <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                SOC and Detection Engineer Intern
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
+                Shankara Cognisec LLP (2024 – Present) • EDR Telemetry & Correlation
+              </div>
+
+              <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '0.75rem' }}>
                 Project Lead & Principal Developer, InsiEDR
               </div>
               <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
@@ -140,10 +147,10 @@ export const About: React.FC = () => {
               </div>
 
               <div style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-primary)', marginTop: '0.75rem' }}>
-                Lead of Technical & Non-Technical Operations, ACE
+                Project Lead & Core Member, ACE
               </div>
               <div style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', marginTop: '0.15rem' }}>
-                Managing ~350 active members across Cybersecurity, Networks, IoT, App & Web Dev
+                Managing ~350+ members across 7 technical & 4 non-technical teams
               </div>
             </div>
 

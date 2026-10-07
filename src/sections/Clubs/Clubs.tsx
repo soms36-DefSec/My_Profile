@@ -2,7 +2,7 @@ import React from 'react';
 import { clubs } from '../../data/clubs';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { TechBadge } from '../../components/ui/TechBadge';
-import { Users, Code, Palette, Shield, Radio, Cpu, Smartphone, Globe } from 'lucide-react';
+import { Users, Code, Palette, Shield, Radio, Cpu, Smartphone, Globe, ExternalLink } from 'lucide-react';
 
 export const Clubs: React.FC = () => {
   const getTeamIcon = (teamName: string) => {
@@ -110,6 +110,28 @@ export const Clubs: React.FC = () => {
                   >
                     {club.period}
                   </div>
+
+                  {club.link && (
+                    <a
+                      href={club.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-link"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.35rem',
+                        fontSize: '0.75rem',
+                        padding: '0.3rem 0.65rem',
+                        border: '1px solid var(--border-default)',
+                        borderRadius: 'var(--radius-xs)',
+                        backgroundColor: 'var(--bg-primary)',
+                      }}
+                    >
+                      <span>ACE Portal ↗</span>
+                      <ExternalLink size={12} />
+                    </a>
+                  )}
                 </div>
               </div>
 

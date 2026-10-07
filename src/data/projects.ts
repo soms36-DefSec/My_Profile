@@ -5,15 +5,16 @@ export const projects: Project[] = [
     id: 'insiedr-platform',
     title: 'InsiEDR — Insider Threat Detection and Response System',
     shortTitle: 'InsiEDR',
-    subtitle: 'Endpoint Telemetry Agent + Hybrid ML Insider Threat Response Server',
+    subtitle: 'Endpoint Telemetry Agent + Central Detection & Response Server',
     category: 'EDR & Systems',
     year: '2024 – Present',
     status: 'Active Development',
     description:
       'A specialized Insider Threat Detection and Response (EDR) system built to detect malicious insider activity, unauthorized data exfiltration, compromised credentials, and lateral movement in real time. Funded by MeitY (Ministry of Electronics and Information Technology).',
     longDescription:
-      'InsiEDR (Insider Threat Detection and Response System) combines a lightweight Windows endpoint sensor with a high-throughput central server. The agent collects 30+ telemetry metrics, encrypts them client-side with AES-256-GCM, and streams them to a FastAPI ingestion pipeline. Telemetry is evaluated across a 4-tier pipeline: deterministic CERT insider threat heuristics, Isolation Forest for unsupervised outlier scoring, XGBoost for threat classification, and temporal sequence modeling. Relational state is stored in PostgreSQL while ClickHouse handles high-FPS analytical queries, pushing live alerts and automated response actions to a React 19 SOC dashboard via Server-Sent Events.',
+      'InsiEDR (Insider Threat Detection and Response System) combines a native Windows endpoint telemetry sensor engineered in Rust with a high-throughput central server in FastAPI. The sensor captures 30+ telemetry logs, encrypts them client-side with AES-256-GCM, and spools them locally to SQLite with exponential backoff during network disconnections. The server correlates incoming event streams through deterministic CERT heuristics and behavioral analysis, utilizing PostgreSQL for state baselines and ClickHouse for high-FPS analytical queries. Real-time actionable alerts, host network isolation, and live process termination are managed through a centralized React 19 SOC dashboard via Server-Sent Events.',
     technologies: [
+      'Rust',
       'Python',
       'FastAPI',
       'React 19',
@@ -21,32 +22,31 @@ export const projects: Project[] = [
       'ClickHouse',
       'PostgreSQL',
       'Redis',
-      'Isolation Forest',
-      'XGBoost',
       'AES-256-GCM',
       'Docker',
+      'SQLite',
     ],
     highlights: [
       'Funded project under MeitY (Ministry of Electronics and Information Technology)',
-      'Windows agent collecting 30+ telemetry metrics with AES-256-GCM encryption',
-      'Dual-storage architecture: PostgreSQL for state & baselines, ClickHouse for high-speed event queries',
-      '4-tier detection pipeline combining CERT heuristics with unsupervised & supervised ML',
-      'Real-time alert streaming to a React 19 SOC analyst console via Server-Sent Events (SSE)',
+      'Native Windows agent in Rust collecting 30+ telemetry logs with AES-256-GCM encryption & SQLite spooling',
+      'Dual-storage architecture: PostgreSQL for entity baselines, ClickHouse for high-speed event queries',
+      'Behavioral correlation and rule-based heuristics engine for real-time threat triage',
+      'Centralized fleet management: live process termination, host network isolation, and SSE alert streaming',
     ],
     architecture: {
-      summary: 'High-throughput telemetry ingestion pipeline with dual-storage persistence and hybrid ML evaluation.',
+      summary: 'High-throughput telemetry ingestion pipeline with dual-storage persistence and behavioral heuristic evaluation.',
       layers: [
         {
           name: 'Endpoints (Sensor)',
-          items: ['InsiEDR-Agent (Windows)', '30+ Telemetry Metrics', 'AES-256-GCM Encrypted Payloads'],
+          items: ['InsiEDR-Agent (Windows / Rust)', '30+ Telemetry Logs', 'AES-256-GCM Encryption', 'Offline SQLite Queue'],
         },
         {
           name: 'Ingestion Layer',
-          items: ['FastAPI ASGI Server', 'Replay Protection & Auth', '8x Background Worker Queue'],
+          items: ['FastAPI ASGI Server', 'Replay Protection & Auth', 'Async Background Worker Queue'],
         },
         {
           name: 'Detection Pipeline',
-          items: ['CERT Heuristics Engine', 'Isolation Forest (Outlier Scoring)', 'XGBoost (Threat Classification)', 'Temporal Sequence Modeler'],
+          items: ['CERT Heuristics Engine', 'Behavioral Event Correlation', 'Unified Threat Scoring'],
         },
         {
           name: 'Storage & Streaming',
@@ -54,7 +54,7 @@ export const projects: Project[] = [
         },
         {
           name: 'SOC Analyst Console',
-          items: ['React 19 + TypeScript', 'Fleet KPIs & Threat Graph', 'Live Virtualized Event Log'],
+          items: ['React 19 + TypeScript', 'Fleet Control & Threat Graph', 'Live Process Termination & Host Isolation'],
         },
       ],
     },
@@ -67,35 +67,36 @@ export const projects: Project[] = [
     id: 'llm-iac-security',
     title: 'LLM-IaC-Security — Multi-Agent Cloud Template Scanner',
     shortTitle: 'LLM-IaC-Sec',
-    subtitle: 'Context-Aware CloudFormation Security Auditing & Automated Fixes',
+    subtitle: 'Context-Aware IaC Vulnerability Remediation for Terraform & CloudFormation',
     category: 'AI & LLM Security',
     year: '2024 – 2025',
     status: 'Active Development',
     description:
-      'An AI-assisted security scanning tool that analyzes AWS CloudFormation templates for subtle architectural misconfigurations and generates ready-to-merge remediation patches.',
+      'An intelligent cloud security scanning tool that analyzes Terraform and AWS CloudFormation templates for subtle architectural misconfigurations and generates ready-to-merge remediation patches.',
     longDescription:
-      'Standard static linters usually inspect individual syntax lines, but frequently miss contextual flaws like over-privileged IAM trust policies or inter-resource dependencies across complex stacks. LLM-IaC-Security parses template ASTs, retrieves security patterns using RAG indexed from AWS security documentation, and uses cooperative agent personas to verify findings and generate clean, human-reviewable unified diffs.',
+      'Standard static linters inspect individual syntax lines, but frequently miss contextual flaws like over-privileged IAM trust policies or inter-resource dependencies across complex cloud stacks. LLM-IaC-Security parses template ASTs, retrieves security patterns using RAG indexed from AWS security documentation, and uses cooperative AI agent personas to verify findings and generate clean, human-reviewable unified diffs.',
     technologies: [
       'Python',
-      'Multi-Agent LLMs',
-      'RAG',
+      'Terraform',
       'AWS CloudFormation',
-      'Vector Search',
+      'RAG',
+      'AI Agents',
+      'GitHub Actions',
       'AST Parsing',
       'AWS IAM',
     ],
     highlights: [
-      'Finds contextual misconfigurations across coupled resources that syntax-only linters miss',
-      'Multi-agent workflow separating AST analysis, severity evaluation, and patch synthesis',
-      'Retrieval-Augmented Generation referencing AWS Security Best Practices and NIST guidelines',
-      'Generates automated, verified unified diff patches for misconfigured IAM and VPC resources',
+      'Evaluates Terraform & AWS CloudFormation templates against security standards to eliminate misconfigurations',
+      'Multi-agent AI workflow separating AST analysis, severity evaluation, and patch synthesis',
+      'Retrieval-Augmented Generation referencing AWS Security Best Practices and NIST guidelines to eliminate false alarms',
+      'Generates automated, verified unified diff patches integrated into CI/CD pipelines for shift-left defense',
     ],
     architecture: {
       summary: 'Template parsing and multi-agent evaluation pipeline with automated patch generation.',
       layers: [
         {
           name: 'Input Parsing',
-          items: ['CloudFormation (YAML/JSON)', 'AST Graph Extraction', 'Resource Relationship Map'],
+          items: ['Terraform & CloudFormation', 'AST Graph Extraction', 'Resource Relationship Map'],
         },
         {
           name: 'Security Context',
@@ -113,7 +114,7 @@ export const projects: Project[] = [
     },
     repositoryUrl: 'https://github.com/soms36-DefSec/llm-iac-security',
     featured: true,
-    badge: 'AI Security',
+    badge: 'Cloud IaC Security',
   },
   {
     id: 'trackme-telemetry',

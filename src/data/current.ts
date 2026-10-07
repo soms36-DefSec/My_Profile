@@ -8,7 +8,7 @@ export const current: CurrentPursuits = {
   building: [
     {
       title: 'InsiEDR — Insider Threat Detection & Response',
-      desc: 'Developing Windows telemetry sensor and high-speed ClickHouse ingestion for the MeitY-funded InsiEDR Insider Threat Detection and Response System.',
+      desc: 'Developing native Windows telemetry sensor in Rust and high-speed ClickHouse ingestion for the MeitY-funded InsiEDR system.',
       tag: 'MeitY Funded',
       link: 'https://github.com/soms36-DefSec/InsiEDR_Server',
     },
@@ -22,32 +22,32 @@ export const current: CurrentPursuits = {
   learning: [
     {
       title: 'Rust for Systems Programming',
-      desc: 'Working through ownership, concurrency, and async runtimes to write memory-safe sensor components.',
+      desc: 'Writing memory-safe Windows endpoint sensors and telemetry collectors with Win32 APIs.',
       tag: 'Systems',
     },
     {
-      title: 'Windows Internals & ETW',
+      title: 'Windows Internals & Event Telemetry',
       desc: 'Studying Event Tracing for Windows (ETW), system call logging, and low-level process monitoring.',
       tag: 'OS Internals',
     },
   ],
   exploring: [
     {
-      title: 'AI/LLM Security Surfaces',
-      desc: 'Testing prompt injection risks and safety evaluation benchmarks for LLM-assisted coding and analysis tools.',
-      tag: 'Security Research',
+      title: 'ClickHouse Query Performance',
+      desc: 'Testing materialized views and fast compression codecs for high-throughput security event tables.',
+      tag: 'Databases',
     },
     {
-      title: 'ClickHouse Query Performance',
-      desc: 'Testing materialized views and fast compression codecs for massive security event tables.',
-      tag: 'Databases',
+      title: 'IaC Security Automation',
+      desc: 'Testing AST parsing and automated policy checks for Terraform & AWS CloudFormation.',
+      tag: 'DevSecOps',
     },
   ],
   researching: [
     {
-      title: 'Anomaly Scoring for Insider Threats',
-      desc: 'Testing combinations of CERT heuristic rules and Isolation Forest models to minimize false positive alerts.',
-      tag: 'Applied ML',
+      title: 'Detection Engineering & Threat Heuristics',
+      desc: 'Evaluating CERT insider-threat heuristics and behavioral correlation rules for real-time SOC alerting.',
+      tag: 'Detection Engineering',
     },
   ],
 };
