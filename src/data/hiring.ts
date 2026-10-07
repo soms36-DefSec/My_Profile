@@ -1,14 +1,12 @@
 import { HiringOverview } from '../types';
 
 export const hiringData: HiringOverview = {
-  availability: 'Actively Available for Independent Contracts & Roles',
-  freelanceStatement:
-    'OPEN FOR FREELANCE & CONTRACT ENGAGEMENTS: Available for project-based SOC engineering, custom telemetry pipelines, DevSecOps automation, and cloud security audits.',
+  availability: 'Actively Available for Security Roles & Internships',
   engagementTypes: [
-    'Freelance & Contract Work (Direct / Retainer)',
-    'Independent Security Tooling & Architecture',
-    'Internships (Spring / Summer / Fall 2025–2026)',
     'Full-Time Roles (Graduating 2027, B.Tech CSE @ SASTRA)',
+    'Security Engineering Internships (2025–2026)',
+    'SOC Engineering & Systems Building',
+    'Cloud Security & DevSecOps Implementation',
   ],
   roles: [
     {
@@ -24,7 +22,6 @@ export const hiringData: HiringOverview = {
         'Real-time streaming alert infrastructure via Server-Sent Events (SSE) and WebSockets',
       ],
       tools: ['Python', 'Rust', 'ClickHouse', 'PostgreSQL', 'FastAPI', 'Redis', 'Docker', 'AES-256-GCM'],
-      freelanceFocus: 'Available for freelance architecture, custom sensor buildouts, and detection pipeline design.',
     },
     {
       id: 'soc-analyst',
@@ -39,7 +36,6 @@ export const hiringData: HiringOverview = {
         'Structured incident documentation, timeline reconstruction, and containment guidance',
       ],
       tools: ['Wireshark', 'Tcpdump', 'Linux / Windows Logs', 'MITRE ATT&CK', 'Network Sockets', 'Incident Documentation'],
-      freelanceFocus: 'Available for contract alert triaging, SOC shift coverage, and packet analysis deep-dives.',
     },
     {
       id: 'cloud-security',
@@ -54,7 +50,6 @@ export const hiringData: HiringOverview = {
         'CloudTrail logging hygiene, GuardDuty threat detection, and anomaly alerts',
       ],
       tools: ['AWS IAM', 'AWS KMS', 'AWS VPC', 'CloudTrail', 'GuardDuty', 'S3 Security', 'AWS CLI'],
-      freelanceFocus: 'Available for freelance AWS infrastructure security assessments and IAM policy reviews.',
     },
     {
       id: 'devsecops',
@@ -69,7 +64,6 @@ export const hiringData: HiringOverview = {
         'Automated remediation patch synthesis using AST transforms and policy validation',
       ],
       tools: ['GitHub Actions', 'Terraform', 'CloudFormation', 'Python', 'Docker', 'Kubernetes', 'AST Parsing'],
-      freelanceFocus: 'Available for freelance CI/CD security audit setups and automated IaC pipeline enforcement.',
     },
   ],
 };

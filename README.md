@@ -179,7 +179,7 @@ export const current = {
   organization: 'CyberPeace / MeitY',
   date: '2026',
   type: 'CTF & Defense',
-  description: 'Solved endpoint forensics and threat hunting challenges.',
+  description: 'Solved endpoint forensics and security triage challenges.',
   tags: ['Forensics', 'CTF', 'SOC'],
   featured: true
 }

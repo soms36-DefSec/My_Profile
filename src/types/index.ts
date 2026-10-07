@@ -219,12 +219,10 @@ export interface HireRole {
   description: string;
   capabilities: string[];
   tools: string[];
-  freelanceFocus: string;
 }
 
 export interface HiringOverview {
   availability: string;
-  freelanceStatement: string;
   engagementTypes: string[];
   roles: HireRole[];
 }

@@ -9,9 +9,9 @@ export const profile: Profile = {
   headline: 'SOC Analyst & Detection Engineer defending systems with telemetry pipelines and cloud defense.',
   subheadline: 'Computer Science undergraduate at SASTRA University (\'27) with hands-on experience in Security Operations (SOC) and Detection Engineering. Specializing in threat detection, telemetry pipelines, incident response, and cloud defense.',
   status: {
-    label: 'Available for Hire & Freelance Contracts',
+    label: 'Open for Roles & Internships',
     state: 'active',
-    details: 'Open for Freelance Security Projects, SOC Engineering, Incident Response, DevSecOps, and Internships.',
+    details: 'Open for SOC Engineering, Incident Response, Cloud Defense, DevSecOps, and Security Internships.',
   },
   location: {
     city: 'Tiruchirappalli',

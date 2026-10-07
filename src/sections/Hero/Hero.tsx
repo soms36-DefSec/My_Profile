@@ -177,7 +177,7 @@ export const Hero: React.FC = () => {
               e.currentTarget.style.color = 'var(--accent)';
             }}
           >
-            <span>Hire Me / Freelance</span>
+            <span>Target Roles</span>
             <ArrowRight size={14} />
           </button>
 

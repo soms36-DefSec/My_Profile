@@ -4,7 +4,7 @@ import { profile } from '../../data/profile';
 import { SectionHeader } from '../../components/ui/SectionHeader';
 import { TechBadge } from '../../components/ui/TechBadge';
 import { useClipboard } from '../../hooks/useClipboard';
-import { Mail, Copy, Check, ArrowRight, Briefcase, Zap, Shield, CheckCircle } from 'lucide-react';
+import { Mail, Copy, Check, Briefcase, Shield, CheckCircle } from 'lucide-react';
 import { LinkedinIcon } from '../../components/ui/Icons';
 
 export const Hire: React.FC = () => {
@@ -15,122 +15,36 @@ export const Hire: React.FC = () => {
       <div className="container">
         <SectionHeader
           number="11 / OPPORTUNITIES"
-          title="Hire Someshwar — Roles & Engagements"
-          subtitle="Available for freelance contracts, independent security tooling projects, internships, and technical roles."
+          title="Target Roles & Career Opportunities"
+          subtitle="Open for full-time security engineering roles, internships, and technical opportunities."
         />
 
-        {/* BOLD FREELANCING PROMINENT CALLOUT BANNER */}
+        {/* Engagement Types Overview Band */}
         <div
           style={{
-            border: '2px solid var(--accent)',
-            backgroundColor: 'rgba(244, 63, 94, 0.05)',
+            border: '1px solid var(--border-default)',
+            backgroundColor: 'var(--bg-surface)',
             borderRadius: 'var(--radius-xs)',
-            padding: '1.75rem 2rem',
-            marginBottom: '3rem',
-            position: 'relative',
+            padding: '1.5rem 1.75rem',
+            marginBottom: '2.5rem',
           }}
         >
           <div
+            className="font-mono"
             style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '1.5rem',
+              fontSize: '0.75rem',
+              color: 'var(--accent)',
+              fontWeight: 600,
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase',
+              marginBottom: '0.85rem',
             }}
           >
-            <div style={{ maxWidth: '780px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.6rem',
-                  marginBottom: '0.6rem',
-                }}
-              >
-                <Zap size={18} color="var(--accent)" />
-                <span
-                  className="font-mono"
-                  style={{
-                    fontSize: '0.8125rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    color: 'var(--accent)',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  ● FREELANCE & CONTRACT ENGAGEMENTS: ACTIVELY AVAILABLE
-                </span>
-              </div>
-
-              <h3
-                style={{
-                  fontSize: 'clamp(1.25rem, 2.5vw, 1.625rem)',
-                  fontWeight: 800,
-                  color: 'var(--text-primary)',
-                  marginBottom: '0.6rem',
-                  lineHeight: 1.3,
-                }}
-              >
-                Need custom SOC tooling, cloud security audits, or detection pipelines?
-              </h3>
-
-              <p
-                style={{
-                  fontSize: '0.9375rem',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.65,
-                  margin: 0,
-                }}
-              >
-                I partner with security teams, startups, and organizations as an <strong>independent freelance contractor</strong> to architect custom telemetry pipelines, audit AWS cloud infrastructure, automate DevSecOps in CI/CD, and build specialized security tooling. Flexible hourly or milestone-based contracts.
-              </p>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', flexShrink: 0 }}>
-              <a
-                href={`mailto:${profile.email}?subject=Freelance%20/%20Security%20Project%20Inquiry%20-%20Someshwar%20S`}
-                style={{
-                  padding: '0.75rem 1.4rem',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '0.5rem',
-                  backgroundColor: 'var(--accent)',
-                  color: '#ffffff',
-                  borderRadius: 'var(--radius-xs)',
-                  textDecoration: 'none',
-                  transition: 'opacity var(--transition-fast)',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.9'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
-              >
-                <Mail size={15} />
-                <span>Discuss a Freelance Project</span>
-                <ArrowRight size={14} />
-              </a>
-
-              <div
-                className="font-mono"
-                style={{
-                  fontSize: '0.75rem',
-                  color: 'var(--text-muted)',
-                  textAlign: 'center',
-                }}
-              >
-                Fast turnaround • Remote worldwide
-              </div>
-            </div>
+            ● {hiringData.availability}
           </div>
 
-          {/* Engagement Types List */}
           <div
             style={{
-              marginTop: '1.5rem',
-              paddingTop: '1.25rem',
-              borderTop: '1px solid rgba(244, 63, 94, 0.2)',
               display: 'flex',
               flexWrap: 'wrap',
               gap: '1rem 2rem',
@@ -143,11 +57,11 @@ export const Hire: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.45rem',
-                  fontSize: '0.8125rem',
+                  fontSize: '0.875rem',
                   color: 'var(--text-secondary)',
                 }}
               >
-                <CheckCircle size={14} color="var(--accent)" style={{ flexShrink: 0 }} />
+                <CheckCircle size={15} color="var(--accent)" style={{ flexShrink: 0 }} />
                 <span>{eng}</span>
               </div>
             ))}
@@ -155,7 +69,7 @@ export const Hire: React.FC = () => {
         </div>
 
         {/* TARGET ROLES GRID */}
-        <div style={{ marginBottom: '1.5rem' }}>
+        <div style={{ marginBottom: '1.25rem' }}>
           <div
             className="font-mono"
             style={{
@@ -163,10 +77,10 @@ export const Hire: React.FC = () => {
               color: 'var(--text-muted)',
               textTransform: 'uppercase',
               letterSpacing: '0.06em',
-              marginBottom: '1rem',
+              marginBottom: '0.5rem',
             }}
           >
-            Target Roles & Capabilities
+            Core Specializations & Responsibilities
           </div>
         </div>
 
@@ -234,7 +148,7 @@ export const Hire: React.FC = () => {
                       fontWeight: 600,
                     }}
                   >
-                    HIRING / FREELANCE
+                    TARGET ROLE
                   </span>
                 </div>
 
@@ -273,7 +187,7 @@ export const Hire: React.FC = () => {
                       marginBottom: '0.5rem',
                     }}
                   >
-                    What I Deliver
+                    Key Deliverables
                   </div>
                   <ul
                     style={{
@@ -306,23 +220,6 @@ export const Hire: React.FC = () => {
               </div>
 
               <div>
-                {/* Freelance Specific Callout */}
-                <div
-                  style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.02)',
-                    border: '1px solid var(--border-subtle)',
-                    borderRadius: 'var(--radius-xs)',
-                    padding: '0.65rem 0.85rem',
-                    marginBottom: '1rem',
-                    fontSize: '0.8125rem',
-                    color: 'var(--text-primary)',
-                    lineHeight: 1.45,
-                  }}
-                >
-                  <strong style={{ color: 'var(--accent)' }}>Freelance Scope: </strong>
-                  <span>{role.freelanceFocus}</span>
-                </div>
-
                 {/* Tools */}
                 <div
                   style={{
@@ -360,11 +257,11 @@ export const Hire: React.FC = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.35rem' }}>
               <Briefcase size={18} color="var(--accent)" />
               <h4 style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>
-                Ready to collaborate or discuss an opening?
+                Ready to discuss an opening or internship?
               </h4>
             </div>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', margin: 0 }}>
-              Send an email with your project specs, contract requirements, or job description. I reply within 24 hours.
+              Send an email regarding open security engineering positions, internships, or technical opportunities. I reply within 24 hours.
             </p>
           </div>
 
@@ -400,7 +297,7 @@ export const Hire: React.FC = () => {
             </button>
 
             <a
-              href={`mailto:${profile.email}?subject=Opportunity%20/%20Hiring%20Inquiry%20-%20Someshwar%20S`}
+              href={`mailto:${profile.email}?subject=Security%20Engineering%20Opportunity%20-%20Someshwar%20S`}
               style={{
                 padding: '0.65rem 1.25rem',
                 fontSize: '0.8125rem',
